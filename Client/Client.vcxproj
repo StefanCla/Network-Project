@@ -108,7 +108,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)Libs;$(SolutionDir)Libs\$(PlatformShortName);$(SolutionDir)Libs\$(PlatformShortName)\$(Configuration);$(SolutionDir)Bin\$(Platform)_$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics-s-d.lib;sfml-system-s-d.lib;sfml-window-s-d.lib;%(AdditionalDependencies);OpenGL32.lib;winmm.lib;ImGui.lib</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics-s-d.lib;sfml-system-s-d.lib;sfml-window-s-d.lib;%(AdditionalDependencies);OpenGL32.lib;winmm.lib;ImGui.lib;SLikeNet_LibStatic_Debug_Win32.lib;ws2_32.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -132,7 +132,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)Libs;$(SolutionDir)Libs\$(PlatformShortName);$(SolutionDir)Libs\$(PlatformShortName)\$(Configuration);$(SolutionDir)Bin\$(Platform)_$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics-s.lib;sfml-system-s.lib;sfml-window-s.lib;%(AdditionalDependencies);OpenGL32.lib;winmm.lib;ImGui.lib</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics-s.lib;sfml-system-s.lib;sfml-window-s.lib;%(AdditionalDependencies);OpenGL32.lib;winmm.lib;ImGui.lib;SLikeNet_LibStatic_Release_Win32.lib;ws2_32.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -147,12 +147,13 @@
       <AdditionalIncludeDirectories>$(SolutionDir)Include;$(SolutionDir)$(ProjectName)\Headers\;$(SolutionDir)ImGui\Headers\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>Precomp.h</PrecompiledHeaderFile>
       <PrecompiledHeader>Use</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)Libs;$(SolutionDir)Libs\$(PlatformShortName);$(SolutionDir)Libs\$(PlatformShortName)\$(Configuration);$(SolutionDir)Bin\$(Platform)_$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics-s-d.lib;sfml-system-s-d.lib;sfml-window-s-d.lib;%(AdditionalDependencies);OpenGL32.lib;winmm.lib;ImGui.lib</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies);sfml-graphics-s-d.lib;sfml-system-s-d.lib;sfml-window-s-d.lib;OpenGL32.lib;winmm.lib;ImGui.lib;SLikeNet_LibStatic_Debug_x64.lib;ws2_32.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -176,11 +177,12 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)Libs;$(SolutionDir)Libs\$(PlatformShortName);$(SolutionDir)Libs\$(PlatformShortName)\$(Configuration);$(SolutionDir)Bin\$(Platform)_$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics-s.lib;sfml-system-s.lib;sfml-window-s.lib;%(AdditionalDependencies);OpenGL32.lib;winmm.lib;ImGui.lib</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics-s.lib;sfml-system-s.lib;sfml-window-s.lib;%(AdditionalDependencies);OpenGL32.lib;winmm.lib;ImGui.lib;SLikeNet_LibStatic_Release_x64.lib;ws2_32.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Client.h" />
+    <ClInclude Include="Headers\CustomPackets.h" />
     <ClInclude Include="Headers\Precomp.h" />
     <ClInclude Include="Headers\Renderer.h" />
   </ItemGroup>

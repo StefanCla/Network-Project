@@ -1,10 +1,16 @@
 #include "Precomp.h"
 #include "Server.h"
 
+#include <memory>
+
 int main()
 {
-	Server* server = new Server();
-	server->PrintNumber(TEST);
+	//Initialize variables
+	std::unique_ptr<Server> server = std::make_unique<Server>();
+	server->SetConnection();
 
-	delete server;
+	while (!server->m_Shutdown)
+	{
+		server->Receive();
+	}
 }

@@ -1,0 +1,8 @@
+﻿  Precomp.cpp
+  Main.cpp
+  Server.cpp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 6 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Server.vcxproj -> C:\Users\Qunur\Desktop\Network-Project\Network-Project\Bin\x64_Release\Server.exe
