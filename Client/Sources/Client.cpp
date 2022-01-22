@@ -215,6 +215,9 @@ void Client::Receive()
 				delete circlePacket;
 			}
 				break;
+			case ID_DISCONNECTEDCLIENT:
+				DisconnectedUser();
+				break;
 			default:
 				//Display received messages
 				ReceiveMessage();
@@ -337,18 +340,29 @@ void Client::InitConnectedClients()
 //Send the position of the player to the server
 void Client::SendPos()
 {
-	PlayerMove* movePacket = new PlayerMove();
+	MovePacket* movePacket = new MovePacket();
 	movePacket->PacketID = ID_PLAYERMOVE;
 	movePacket->PlayerID = m_ClientNumber;
 	movePacket->Position = m_Game->GetPlayers()[m_ClientNumber]->GetPosition();
 
 	//Send packet to server in UDP
-	m_Client->Send((const char*)movePacket, sizeof(PlayerMove) + 1, LOW_PRIORITY, UNRELIABLE, 0, SLNet::UNASSIGNED_SYSTEM_ADDRESS, true);
+	m_Client->Send((const char*)movePacket, sizeof(MovePacket) + 1, LOW_PRIORITY, UNRELIABLE, 0, SLNet::UNASSIGNED_SYSTEM_ADDRESS, true);
+	delete movePacket;
 }
 
 //Set pos of the other clients
 void Client::SetClientPos()
 {
-	PlayerMove* movePacket = (PlayerMove*)m_Packet->data;
+	MovePacket* movePacket = (MovePacket*)m_Packet->data;
 	m_Game->GetPlayers()[movePacket->PlayerID]->SetPosition(movePacket->Position);
+}
+
+//Remove the user that disconnected
+void Client::DisconnectedUser()
+{
+	DisconnectedPacket* disconnectPacket = (DisconnectedPacket*)m_Packet->data;
+	m_Game->ErasePlayer(disconnectPacket->PlayerID);
+	
+	if (disconnectPacket->PlayerID < m_ClientNumber)
+		m_ClientNumber = m_ClientNumber - 1;
 }

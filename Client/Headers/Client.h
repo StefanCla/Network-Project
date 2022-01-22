@@ -43,7 +43,7 @@ public:
 
 	//Public variable
 	std::string m_Name;
-	int m_ClientNumber;		//Your ID on the server
+	unsigned int m_ClientNumber;		//Your ID on the server
 
 private:
 	//Data types needed for connection & messages
@@ -81,4 +81,5 @@ private:
 	void ReceiveCircle();
 	void InitConnectedClients();
 	void SetClientPos();
+	void DisconnectedUser();
 };

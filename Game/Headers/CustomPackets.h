@@ -9,7 +9,8 @@ enum CustomPackets
 	ID_WHISPER,
 	ID_CLIENTCONNECTED,
 	ID_CIRCLE,
-	ID_PLAYERMOVE
+	ID_PLAYERMOVE,
+	ID_DISCONNECTEDCLIENT
 };
 
 struct NamePacket
@@ -39,9 +40,15 @@ struct CirclePacket
 	sf::Color Color;
 };
 
-struct PlayerMove
+struct MovePacket //Make Packet
 {
 	unsigned char PacketID;
 	unsigned int PlayerID;
 	sf::Vector2f Position;
+};
+
+struct DisconnectedPacket
+{
+	unsigned char PacketID;
+	unsigned int PlayerID;
 };

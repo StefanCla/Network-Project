@@ -5,7 +5,8 @@
 #include "slikenet/Kbhit.h"
 #include "slikenet/sleep.h"
 
-#include <map>
+//#include <map>
+#include <unordered_map>
 #include <string>
 #include <vector>
 #include <Player.h>
@@ -37,7 +38,8 @@ private:
 	unsigned char m_PacketIdentifier;
 	char m_Message[MAX_CHATLENGTH];
 
-	std::map<std::string, SLNet::SystemAddress> m_UserMap;
+	std::unordered_map<std::string, SLNet::SystemAddress> m_UserMap;
+	//std::map<std::string, SLNet::SystemAddress> m_UserMap;
 
 	//Gameplay stuff
 	std::shared_ptr<Game> m_Game;
@@ -48,4 +50,5 @@ private:
 	void Whisper();
 	void Circle();
 	void PlayerMovement();
+	void DisconnectedUser();
 };

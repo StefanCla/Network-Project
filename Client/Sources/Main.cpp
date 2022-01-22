@@ -58,12 +58,13 @@ int main()
 
 		if (renderer->GetWindow().hasFocus())
 		{
-			//Move my sphere
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-			{
-				game->GetPlayers()[client->m_ClientNumber]->SetPosition(game->GetPlayers()[client->m_ClientNumber]->GetPosition().x + 5, game->GetPlayers()[client->m_ClientNumber]->GetPosition().y); //Miss deltatime here
-				client->SendPos();
-			}
+			if (!game->GetPlayers().empty())
+				//Move my sphere
+				if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+				{
+					game->GetPlayers()[client->m_ClientNumber]->SetPosition(game->GetPlayers()[client->m_ClientNumber]->GetPosition().x + 5, game->GetPlayers()[client->m_ClientNumber]->GetPosition().y); //Miss deltatime here
+					client->SendPos();
+				}
 		}
 
 		if(!game->GetPlayers().empty())

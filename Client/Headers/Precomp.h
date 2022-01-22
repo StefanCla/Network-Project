@@ -7,4 +7,4 @@
 #define MAX_CHATLENGTH 2048
 
 //Port number that the server will connect to
-#define SERVERPORT 40001
+#define SERVERPORT 40000

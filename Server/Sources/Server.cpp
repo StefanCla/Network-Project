@@ -87,7 +87,8 @@ void Server::Receive()
 		{
 		case ID_DISCONNECTION_NOTIFICATION:
 			// Connection lost normally
-			printf("ID_DISCONNECTION_NOTIFICATION from %s\n", m_Packet->systemAddress.ToString(true));;
+			printf("ID_DISCONNECTION_NOTIFICATION from %s\n", m_Packet->systemAddress.ToString(true));
+			DisconnectedUser();
 			break;
 
 		case ID_NEW_INCOMING_CONNECTION:
@@ -132,7 +133,10 @@ void Server::Receive()
 		{
 			//Add their name to the map
 			NamePacket* namePacket = (NamePacket*)m_Packet->data;
+
+			//std::map<std::string, SLNet::SystemAddress>::iterator it = m_UserMap.begin();
 			m_UserMap.insert(std::pair<std::string, SLNet::SystemAddress>(namePacket->Name, m_Packet->systemAddress));
+			
 		}
 			break;
 		case ID_WHISPER:
@@ -179,7 +183,7 @@ void Server::Whisper()
 {
 	WhisperPacket* packet = (WhisperPacket*)m_Packet->data;
 	
-	std::map<std::string, SLNet::SystemAddress>::iterator it;
+	std::unordered_map<std::string, SLNet::SystemAddress>::iterator it;
 	it = m_UserMap.find(packet->WhisperName);
 	if (it != m_UserMap.end()) //Check if user is connected to the server
 	{
@@ -187,7 +191,7 @@ void Server::Whisper()
 		{}
 		else
 		{
-			std::map<std::string, SLNet::SystemAddress>::iterator second;
+			std::unordered_map<std::string, SLNet::SystemAddress>::iterator second;
 			for (second = m_UserMap.begin(); second != m_UserMap.end(); second++)
 			{
 				if (second->second == m_Packet->systemAddress)
@@ -238,8 +242,34 @@ void Server::Circle()
 //Set the new position of the player
 void Server::PlayerMovement()
 {
-	PlayerMove* movePacket = (PlayerMove*)m_Packet->data;
+	MovePacket* movePacket = (MovePacket*)m_Packet->data;
 	m_Game->GetPlayers()[movePacket->PlayerID]->SetPosition(movePacket->Position);
 
-	m_Server->Send((const char*)movePacket, sizeof(PlayerMove) + 1, LOW_PRIORITY, UNRELIABLE, 0, m_Packet->systemAddress, true);
+	m_Server->Send((const char*)movePacket, sizeof(MovePacket) + 1, LOW_PRIORITY, UNRELIABLE, 0, m_Packet->systemAddress, true);
+}
+
+//Let all clients know that a user has disconnected from the server
+//So they can remove their instance
+void Server::DisconnectedUser()
+{
+	unsigned int index = 0;
+	std::unordered_map<std::string, SLNet::SystemAddress>::iterator it;
+	for(it = m_UserMap.begin(); it != m_UserMap.end(); it++)
+	{
+		if (m_Packet->systemAddress != it->second)
+			index++;
+		else
+			break;
+	}
+
+	DisconnectedPacket* disconnectPacket = new DisconnectedPacket();
+	disconnectPacket->PacketID = ID_DISCONNECTEDCLIENT;
+	disconnectPacket->PlayerID = index;
+
+	//Let everyone know that this client has disconnected
+	m_Server->Send((const char*)disconnectPacket, sizeof(DisconnectedPacket) + 1, HIGH_PRIORITY, RELIABLE_ORDERED, 0, m_Packet->systemAddress, true);
+	delete disconnectPacket;
+
+	m_Game->ErasePlayer(index);
+	m_UserMap.erase(it->first);
 }
