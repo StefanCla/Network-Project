@@ -1,10 +1,12 @@
 #include "Precomp.h"
 #include "Server.h"
 #include "CustomPackets.h"
+#include "Game.h"
 
 #include <iostream>
 
-Server::Server() :
+Server::Server(std::shared_ptr<Game> game) :
+	m_Game(game),
 	m_Shutdown(false)
 {}
 
@@ -89,6 +91,7 @@ void Server::Receive()
 			break;
 
 		case ID_NEW_INCOMING_CONNECTION:
+		{
 			// Somebody connected.  We have their IP now
 			printf("ID_NEW_INCOMING_CONNECTION from %s with GUID %s\n", m_Packet->systemAddress.ToString(true), m_Packet->guid.ToString());
 			m_ClientID = m_Packet->systemAddress; // Record the player ID of the client
@@ -103,6 +106,12 @@ void Server::Receive()
 				}
 			}
 
+			ClientConnectPacket* clientPacket = new ClientConnectPacket();
+			clientPacket->PacketID = ID_CLIENTCONNECTED;
+			clientPacket->ConnectedClients = static_cast<int>(m_UserMap.size());
+			m_Server->Send((const char*)clientPacket, sizeof(ClientConnectPacket) + 1, HIGH_PRIORITY, RELIABLE_ORDERED, 0, m_Packet->systemAddress, false);
+			delete clientPacket;
+		}
 			break;
 
 		case ID_INCOMPATIBLE_PROTOCOL_VERSION:
@@ -128,6 +137,12 @@ void Server::Receive()
 			break;
 		case ID_WHISPER:
 			Whisper();
+			break;
+		case ID_CIRCLE:
+			Circle();
+			break;
+		case ID_PLAYERMOVE:
+			PlayerMovement();
 			break;
 		default:
 			// The server knows the static data of all clients, so we can prefix the message
@@ -194,4 +209,37 @@ void Server::Whisper()
 		strcpy_s(offline, sizeof(offline), "Server: User is offline");
 		m_Server->Send(offline, (const int)strlen(offline) + 1, HIGH_PRIORITY, RELIABLE_ORDERED, 0, m_Packet->systemAddress, false);
 	}
+}
+
+//Circle data | Receive circle data and send this to other clients, as well as the current circle data back
+void Server::Circle()
+{
+	CirclePacket* circlePacket = (CirclePacket*)m_Packet->data;
+
+	m_Game->SetPlayer(circlePacket->Diameter, circlePacket->Position, circlePacket->Color);
+
+	//Notice all other clients a new user has connected
+	m_Server->Send((const char*)circlePacket, sizeof(CirclePacket) + 1, HIGH_PRIORITY, RELIABLE_ORDERED, 0, m_Packet->systemAddress, true);
+
+	//Set all existing users to the newly connected user
+	for (unsigned int i = 0; i < m_Game->GetPlayers().size() - 1; i++)
+	{
+		CirclePacket* circleToSend = new CirclePacket();
+		circleToSend->PacketID = ID_CIRCLE;
+		circleToSend->Diameter = m_Game->GetPlayers()[i]->GetDiameter();
+		circleToSend->Position = m_Game->GetPlayers()[i]->GetPosition();
+		circleToSend->Color = m_Game->GetPlayers()[i]->GetColor();
+
+		m_Server->Send((const char*)circleToSend, sizeof(CirclePacket) + 1, HIGH_PRIORITY, RELIABLE_ORDERED, 0, m_Packet->systemAddress, false);
+		delete circleToSend;
+	}
+}
+
+//Set the new position of the player
+void Server::PlayerMovement()
+{
+	PlayerMove* movePacket = (PlayerMove*)m_Packet->data;
+	m_Game->GetPlayers()[movePacket->PlayerID]->SetPosition(movePacket->Position);
+
+	m_Server->Send((const char*)movePacket, sizeof(PlayerMove) + 1, LOW_PRIORITY, UNRELIABLE, 0, m_Packet->systemAddress, true);
 }

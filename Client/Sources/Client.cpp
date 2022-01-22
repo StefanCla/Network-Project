@@ -3,8 +3,12 @@
 #include "Renderer.h"
 #include "CustomPackets.h"
 #include <iostream>
+#include "Game.h"
+#include "Player.h"
 
-Client::Client() :
+Client::Client(std::shared_ptr<Game> game) :
+	m_Game(game),
+	m_Client(SLNet::RakPeerInterface::GetInstance()),
 	m_ReceivedMessage(""),
 	m_Name("")
 {}
@@ -19,7 +23,6 @@ Client::~Client()
 //Establish a connection with the server
 void Client::SetConnection()
 {
-	m_Client = SLNet::RakPeerInterface::GetInstance();
 	m_ClientID = SLNet::UNASSIGNED_SYSTEM_ADDRESS;
 
 	m_Client->AllowConnectionResponseIPMigration(false);
@@ -190,6 +193,28 @@ void Client::Receive()
 			case ID_UNCONNECTED_PING:
 				printf("Ping from %s\n", m_Packet->systemAddress.ToString(true));
 				break;
+			case ID_CIRCLE:
+				ReceiveCircle();
+				break;
+			case ID_PLAYERMOVE:
+				SetClientPos();
+				break;
+			case ID_CLIENTCONNECTED:
+			{
+				InitConnectedClients();
+				
+				//Send back the current data of this client.
+				//The pos / color / diameter
+				CirclePacket* circlePacket = new CirclePacket();
+				circlePacket->PacketID = ID_CIRCLE;
+				circlePacket->Color = m_Color;
+				circlePacket->Position = m_Pos;
+				circlePacket->Diameter = m_Dia;
+
+				m_Client->Send((const char*)circlePacket, sizeof(CirclePacket) + 1, HIGH_PRIORITY, RELIABLE_ORDERED, 0, SLNet::UNASSIGNED_SYSTEM_ADDRESS, true);
+				delete circlePacket;
+			}
+				break;
 			default:
 				//Display received messages
 				ReceiveMessage();
@@ -227,7 +252,7 @@ void Client::ReceiveMessage()
 //Loop through the chat vector to display on screen
 void Client::DisplayChat()
 {
-	for (int i = 0; i < m_MessageArray.size(); i++)
+	for (unsigned int i = 0; i < m_MessageArray.size(); i++)
 	{
 		ImGui::Text(m_MessageArray[i].c_str());
 	}
@@ -242,6 +267,9 @@ void Client::GetInput()
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
 	{
 		strcpy_s(m_Message, test);
+
+		if (m_Message[0] == 'm')
+			m_Game->ErasePlayer(1);
 	}
 }
 
@@ -251,11 +279,15 @@ void Client::SetName()
 	ImGui::Begin("Setup");
 	ImGui::InputText("Set Name", m_InputName, sizeof(m_InputName));
 	ImGui::InputText("Set Port", m_Port, sizeof(m_Port));
+	ImGui::SliderInt("PosX", &posX, 0, 200);
+	ImGui::SliderInt("PosY", &posY, 0, 200);
 	ImGui::End();
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
 	{
 		m_Name = m_InputName;
+		m_Pos = sf::Vector2f(static_cast<float>(posX), static_cast<float>(posY));
+
 		m_ClientListeningPort = atoi(m_Port);
 	}
 }
@@ -270,4 +302,53 @@ void Client::AddChatToMessageArray(const char* message)
 		m_MessageArray.erase(m_MessageArray.begin());
 		m_MessageArray.push_back(message);
 	}
+}
+
+//Get circle data
+void Client::ReceiveCircle()
+{
+	CirclePacket* circlePacket = (CirclePacket*)m_Packet->data;
+	m_Game->SetPlayer(circlePacket->Diameter, circlePacket->Position, circlePacket->Color);
+
+	if (m_Game->GetPlayers().size() == m_CurrentClients)
+	{
+		m_Game->SetPlayer(m_Dia, m_Pos, m_Color);
+		printf("We added ourselves!\n");
+	}
+}
+
+//Initialize clients that were already connected to the server
+void Client::InitConnectedClients()
+{
+	ClientConnectPacket* clientPacket = (ClientConnectPacket*)m_Packet->data;
+	m_CurrentClients = clientPacket->ConnectedClients;
+	m_ClientNumber = clientPacket->ConnectedClients;
+
+	printf("Currently connected clients: %i\n", m_CurrentClients);
+	printf("Own client number: %i\n", m_ClientNumber);
+
+	if (m_CurrentClients == 0)
+	{
+		m_Game->SetPlayer(m_Dia, m_Pos, m_Color);
+		printf("There were no clients, so we added ourselves!\n");
+	}
+}
+
+//Send the position of the player to the server
+void Client::SendPos()
+{
+	PlayerMove* movePacket = new PlayerMove();
+	movePacket->PacketID = ID_PLAYERMOVE;
+	movePacket->PlayerID = m_ClientNumber;
+	movePacket->Position = m_Game->GetPlayers()[m_ClientNumber]->GetPosition();
+
+	//Send packet to server in UDP
+	m_Client->Send((const char*)movePacket, sizeof(PlayerMove) + 1, LOW_PRIORITY, UNRELIABLE, 0, SLNet::UNASSIGNED_SYSTEM_ADDRESS, true);
+}
+
+//Set pos of the other clients
+void Client::SetClientPos()
+{
+	PlayerMove* movePacket = (PlayerMove*)m_Packet->data;
+	m_Game->GetPlayers()[movePacket->PlayerID]->SetPosition(movePacket->Position);
 }

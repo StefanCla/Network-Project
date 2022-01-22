@@ -7,18 +7,23 @@
 
 #include <map>
 #include <string>
+#include <vector>
+#include <Player.h>
+
+#include <SFML/Graphics.hpp>
+
+class Game;
 
 class Server
 {
 public:
 	//Constructor & Destructor
-	Server();
+	Server(std::shared_ptr<Game> game);
 	~Server();
 
 	//Public functions
 	void SetConnection();
 	void Receive();
-	void Whisper();
 
 	//Public variable
 	bool m_Shutdown;
@@ -34,7 +39,13 @@ private:
 
 	std::map<std::string, SLNet::SystemAddress> m_UserMap;
 
+	//Gameplay stuff
+	std::shared_ptr<Game> m_Game;
+
 private:
 	//Private functions
 	unsigned char GetPacketIdentifier();
+	void Whisper();
+	void Circle();
+	void PlayerMovement();
 };

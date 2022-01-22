@@ -1,16 +1,21 @@
 #include "Precomp.h"
 #include "Renderer.h"
 #include "Client.h"
+#include "Player.h"
+#include "Game.h"
 
 #include <memory>
 
 int main()
 {
 	//Initialize variables
-	std::unique_ptr<Client> client = std::make_unique<Client>();
+	std::shared_ptr<Game> game = std::make_shared<Game>();
+	std::unique_ptr<Client> client = std::make_unique<Client>(game);
 	std::unique_ptr<Renderer> renderer = std::make_unique<Renderer>();
 
 	bool IsConnected = false;
+
+	
 
 	//Update loop
 	while (renderer->GetWindow().isOpen())
@@ -50,9 +55,29 @@ int main()
 			}
 		}
 
+
+		if (renderer->GetWindow().hasFocus())
+		{
+			//Move my sphere
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+			{
+				game->GetPlayers()[client->m_ClientNumber]->SetPosition(game->GetPlayers()[client->m_ClientNumber]->GetPosition().x + 5, game->GetPlayers()[client->m_ClientNumber]->GetPosition().y); //Miss deltatime here
+				client->SendPos();
+			}
+		}
+
+		if(!game->GetPlayers().empty())
+			for (unsigned int i = 0; i < game->GetPlayers().size(); i++)
+			{
+				renderer->DrawCircle(game->GetPlayers()[i]->GetDiameter(), game->GetPlayers()[i]->GetPosition(), game->GetPlayers()[i]->GetColor());
+			}
+
 		//Draw something
 		//renderer->DrawCircle(50.0f, sf::Vector2f(10, 10), sf::Color(sf::Color::Cyan));
 		//renderer->DrawRectangle(sf::Vector2f(150, 100), sf::Vector2f(140, 140), sf::Color(sf::Color::Green));
+
+		//Game
+		game->Update();
 
 		//Render all
 		renderer->Render();
