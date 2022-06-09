@@ -2,10 +2,10 @@
 #include <chrono>
 #include <memory>
 
+#include "ObjectManager/ObjectManager.hpp"
 #ifdef CLIENT
 #include "Renderer/Renderer.hpp"
 #endif
-#include "ObjectManager/ObjectManager.hpp"
 
 class Object;
 class Network;
@@ -27,23 +27,16 @@ public:
 	bool IsWindowOpen();
 	bool HasFocus();
 	void SetObjects(std::vector<std::shared_ptr<Object>>& objects);
-	//void InitializeObjects();
-
-
-	//template <typename BaseObject>
-	//void AddObject(std::shared_ptr<BaseObject> object)
-	//{
-	//	m_ObjectManager->AddObject(object);
-	//}
 
 	//Getters
 	std::shared_ptr<Object> GetObjectByIndex(int index);
 
 	//Others
+	float GetDeltaTime();
+
 #ifdef CLIENT
 	bool IsKeyPressed(sf::Keyboard::Key);
 #endif
-	float GetDeltaTime();
 
 private:
 	//Deltatime
@@ -54,9 +47,9 @@ private:
 
 	//Components
 	std::unique_ptr<ObjectManager> m_ObjectManager;
+	std::shared_ptr<Network> m_Network;
+
 #ifdef CLIENT
 	std::unique_ptr<Renderer> m_Renderer;
 #endif
-	std::shared_ptr<Network> m_Network;
-
 };

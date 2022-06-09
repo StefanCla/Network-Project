@@ -235,12 +235,16 @@ void Game::UpdateLoop()
 void Game::SetClientDetails()
 {
 	char tempName[512];
-	//strcpy_s(tempName, m_Name.c_str());
-	strcpy(tempName, m_Name.c_str());
-
 	char tempPort[512];
-	//strcpy_s(tempPort, m_Port.c_str());
+
+#ifdef WINDOWS
+	strcpy_s(tempName, m_Name.c_str());
+	strcpy_s(tempPort, m_Port.c_str());
+#else
+	strcpy(tempName, m_Name.c_str());
 	strcpy(tempPort, m_Port.c_str());
+
+#endif
 
 	ImGui::Begin("Setup");
 	ImGui::InputText("Set Name:", tempName, sizeof(tempName));
@@ -261,8 +265,11 @@ void Game::ChatInput()
 	{
 		if (m_Engine->IsKeyPressed(sf::Keyboard::Enter))
 		{
-			//strcpy_s(m_Message, message);
+#ifdef WINDOWS
+			strcpy_s(m_Message, message);
+#else
 			strcpy(m_Message, message);
+#endif
 		}
 	}
 }
@@ -277,10 +284,13 @@ void Game::SendChat()
 
 		//Add name prefix
 		std::string prefix = m_Name + ": ";
+#ifdef WINDOWS
+		strncpy_s(chatPacket.Message, prefix.c_str(), sizeof(chatPacket.Message));
+		strncat_s(chatPacket.Message, m_Message, sizeof(chatPacket.Message) - strlen(prefix.c_str()) - 1);
+#else
 		strncpy(chatPacket.Message, prefix.c_str(), sizeof(chatPacket.Message));
 		strncat(chatPacket.Message, m_Message, sizeof(chatPacket.Message) - strlen(prefix.c_str()) - 1);
-		//strncpy_s(chatPacket.Message, prefix.c_str(), sizeof(chatPacket.Message));
-		//strncat_s(chatPacket.Message, m_Message, sizeof(chatPacket.Message) - strlen(prefix.c_str()) - 1);
+#endif
 
 		//Add message to display vector
 		AddChatToArray(chatPacket.Message);
