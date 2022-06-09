@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Extern">
+      <UniqueIdentifier>{ae0c5f06-633a-4f92-a0aa-186b3ac92209}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Extern\Libs">
+      <UniqueIdentifier>{abe4d4d6-95c7-4dcc-89ff-7bd38dac1e70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Extern\Libs\ARM">
+      <UniqueIdentifier>{11ca3cc6-58c3-42d1-bb96-890baf215fa6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Extern\Libs\ARM\Debug">
+      <UniqueIdentifier>{1402b96d-3790-462b-914f-e8d9c749ffbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Extern\Libs\ARM\Release">
+      <UniqueIdentifier>{33eb53d3-7798-4a50-b8bd-85bfdfd4ba9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Extern\Libs\ARM64">
+      <UniqueIdentifier>{72691d67-d141-4d66-87de-9d327670c718}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Extern\Libs\ARM64\Debug">
+      <UniqueIdentifier>{e650b7df-1c9c-48a5-b23d-cd218b6b245d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Extern\Libs\ARM64\Release">
+      <UniqueIdentifier>{207ca7b2-e89a-48f0-abdf-62930245b117}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Network">
+      <UniqueIdentifier>{c9356eb3-9b95-49d5-a7a4-285a4d184049}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Network">
+      <UniqueIdentifier>{9fed3783-55ac-44c4-9acd-888b1a3fd955}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Network\PacketParser.cpp">
+      <Filter>Source\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Game.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\Libs\ARM\libslikenet.a">
+      <Filter>Extern\Libs\ARM</Filter>
+    </Library>
+    <Library Include="..\Libs\ARM\Debug\libsfml-graphics-s-d.a">
+      <Filter>Extern\Libs\ARM\Debug</Filter>
+    </Library>
+    <Library Include="..\Libs\ARM\Debug\libsfml-system-s-d.a">
+      <Filter>Extern\Libs\ARM\Debug</Filter>
+    </Library>
+    <Library Include="..\Libs\ARM\Debug\libsfml-window-s-d.a">
+      <Filter>Extern\Libs\ARM\Debug</Filter>
+    </Library>
+    <Library Include="..\Libs\ARM\Release\libsfml-graphics-s.a">
+      <Filter>Extern\Libs\ARM\Release</Filter>
+    </Library>
+    <Library Include="..\Libs\ARM\Release\libsfml-system-s.a">
+      <Filter>Extern\Libs\ARM\Release</Filter>
+    </Library>
+    <Library Include="..\Libs\ARM\Release\libsfml-window-s.a">
+      <Filter>Extern\Libs\ARM\Release</Filter>
+    </Library>
+    <Library Include="..\Libs\ARM64\libslikenet.a">
+      <Filter>Extern\Libs\ARM64</Filter>
+    </Library>
+    <Library Include="..\Libs\ARM64\Debug\libsfml-graphics-s-d.a">
+      <Filter>Extern\Libs\ARM64\Debug</Filter>
+    </Library>
+    <Library Include="..\Libs\ARM64\Debug\libsfml-system-s-d.a">
+      <Filter>Extern\Libs\ARM64\Debug</Filter>
+    </Library>
+    <Library Include="..\Libs\ARM64\Debug\libsfml-window-s-d.a">
+      <Filter>Extern\Libs\ARM64\Debug</Filter>
+    </Library>
+    <Library Include="..\Libs\ARM64\Release\libsfml-graphics-s.a">
+      <Filter>Extern\Libs\ARM64\Release</Filter>
+    </Library>
+    <Library Include="..\Libs\ARM64\Release\libsfml-system-s.a">
+      <Filter>Extern\Libs\ARM64\Release</Filter>
+    </Library>
+    <Library Include="..\Libs\ARM64\Release\libsfml-window-s.a">
+      <Filter>Extern\Libs\ARM64\Release</Filter>
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Headers\Network\PacketParser.hpp">
+      <Filter>Headers\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Game.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

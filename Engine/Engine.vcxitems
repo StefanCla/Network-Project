@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{7849f00e-4ec9-4b58-9336-5892711df7d4}</ItemsProjectGuid>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\Engine.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\Network\Network.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\Network\BasePacketParser.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\ObjectManager\Object.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\ObjectManager\ObjectManager.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\ObjectManager\Transform.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\Precomp.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\Renderer\Mesh\BaseMesh.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\Renderer\Mesh\CircleMesh.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\Renderer\Mesh\RectMesh.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\Renderer\Renderer.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|ARM'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|ARM'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|x64'">true</ExcludedFromBuild>
+	  <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|Win32'">true</ExcludedFromBuild>
+	  <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|ARM'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|ARM'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|x64'">false</ExcludedFromBuild>
+	  <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|Win32'">false</ExcludedFromBuild>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Extern\ImGui\imgui-SFML.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|ARM'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|ARM'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|x64'">true</ExcludedFromBuild>
+	  <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|Win32'">true</ExcludedFromBuild>
+	  <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|ARM'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|ARM'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|x64'">false</ExcludedFromBuild>
+	  <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Extern\ImGui\imgui.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|ARM'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|ARM'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|x64'">true</ExcludedFromBuild>
+	  <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|Win32'">true</ExcludedFromBuild>
+	  <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|ARM'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|ARM'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|x64'">false</ExcludedFromBuild>
+	  <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Extern\ImGui\imgui_draw.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|ARM'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|ARM'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|x64'">true</ExcludedFromBuild>
+	  <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|Win32'">true</ExcludedFromBuild>
+	  <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|ARM'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|ARM'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|x64'">false</ExcludedFromBuild>
+	  <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Extern\ImGui\imgui_stdlib.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|ARM'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|ARM'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|x64'">true</ExcludedFromBuild>
+	  <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|Win32'">true</ExcludedFromBuild>
+	  <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|ARM'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|ARM'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|x64'">false</ExcludedFromBuild>
+	  <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Extern\ImGui\imgui_tables.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|ARM'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|ARM'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|x64'">true</ExcludedFromBuild>
+	  <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|Win32'">true</ExcludedFromBuild>
+	  <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|ARM'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|ARM'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|x64'">false</ExcludedFromBuild>
+	  <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Extern\ImGui\imgui_widgets.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|ARM'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|ARM'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|x64'">true</ExcludedFromBuild>
+	  <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|Win32'">true</ExcludedFromBuild>
+	  <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|ARM'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|ARM'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|x64'">false</ExcludedFromBuild>
+	  <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Source\Engine.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Source\Network\Network.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Source\ObjectManager\Object.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Source\ObjectManager\ObjectManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Source\Precomp.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Precomp.hpp</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Precomp.hpp</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Precomp.hpp</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Precomp.hpp</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)Includes\Server\;$(SolutionDir)$(ProjectName)\Headers\;$(SolutionDir)Engine\Headers\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Source\Renderer\Mesh\BaseMesh.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Source\Renderer\Mesh\CircleMesh.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Source\Renderer\Mesh\RectMesh.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Source\Renderer\Renderer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|ARM64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|ARM'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|ARM'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|x64'">true</ExcludedFromBuild>
+	  <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Server|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Server|Win32'">true</ExcludedFromBuild>
+	  <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|ARM64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|ARM'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|ARM'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|x64'">false</ExcludedFromBuild>
+	  <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Debug|Client|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(ProjectName)|$(Platform)'=='Release|Client|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
+  </ItemGroup>
+</Project>

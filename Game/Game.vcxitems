@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{33635e0c-6193-4e3c-9626-73592c3a2b86}</ItemsProjectGuid>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\Network\CustomPackets.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\Objects\BombObject.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\Objects\CrateObject.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\Objects\PlayerObject.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\Objects\TestObject.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\Objects\UpgradeObject.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Source\Objects\BombObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Source\Objects\CrateObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Source\Objects\PlayerObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Source\Objects\TestObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Source\Objects\UpgradeObject.cpp" />
+  </ItemGroup>
+</Project>

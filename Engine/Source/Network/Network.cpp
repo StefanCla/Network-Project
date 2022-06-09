@@ -1,0 +1,231 @@
+#include "Precomp.hpp"
+#include "Network/Network.hpp"
+#include "Network/BasePacketParser.hpp"
+#include <iostream>
+
+#include "Network/CustomPackets.hpp"
+
+Network::Network(std::shared_ptr<BasePacketParser> packetParser)
+	: m_ParsePacketData(packetParser)
+	, m_Self(nullptr)
+	, m_ConnectingAttempt(false)
+	, m_IsConnected(false)
+{
+	m_ParsePacketData->AddNetwork(this);
+
+#ifdef SERVER
+	User user;
+	for (unsigned int i = 0; i < MAXPLAYERS; i++)
+	{
+		m_UserMap.insert(std::pair<unsigned int, User>(i, user));
+	}
+#endif
+}
+
+Network::~Network()
+{
+	if (m_Self != nullptr)
+	{
+		m_Self->Shutdown(3000);
+		SLNet::RakPeerInterface::DestroyInstance(m_Self);
+	}
+}
+
+void Network::SetConnection()
+{
+#ifdef SERVER
+
+	m_Self = SLNet::RakPeerInterface::GetInstance();
+	m_Self->SetIncomingPassword(PASS, (int)strlen(PASS));
+	m_Self->SetTimeoutTime(30000, SLNet::UNASSIGNED_SYSTEM_ADDRESS);
+
+	SLNet::SocketDescriptor socketDescriptors[2];
+	socketDescriptors[0].port = static_cast<unsigned short>(SERVERPORT);
+	socketDescriptors[0].socketFamily = AF_INET;
+	socketDescriptors[1].port = static_cast<unsigned short>(SERVERPORT);
+	socketDescriptors[1].socketFamily = AF_INET6;
+
+	//Try to listen with IPv6
+	bool testIP = m_Self->Startup(4, socketDescriptors, 2) == SLNet::RAKNET_STARTED;
+	m_Self->SetMaximumIncomingConnections(MAXPLAYERS);
+
+	if (!testIP)
+	{
+		printf("Failed to start dual ports\n");
+		testIP = m_Self->Startup(4, socketDescriptors, 1) == SLNet::RAKNET_STARTED;
+		if (!testIP)
+		{
+			puts("Server failed to start.\n");
+		}
+	}
+	m_Self->SetOccasionalPing(true);
+	m_Self->SetUnreliableTimeout(1000);
+
+	m_IsConnected = true; //Server is always connected
+
+#elif CLIENT
+
+	m_Self = SLNet::RakPeerInterface::GetInstance();
+	m_Self->AllowConnectionResponseIPMigration(false);
+
+	SLNet::SocketDescriptor socketDescriptor(static_cast<unsigned short>(m_ClientListeningPort), 0);
+	socketDescriptor.socketFamily = AF_INET;
+	m_Self->Startup(8, &socketDescriptor, 1);
+	m_Self->SetOccasionalPing(true);
+
+	m_Self->Connect(SERVERIP, static_cast<unsigned short>(SERVERPORT), PASS, (int)strlen(PASS));
+
+#endif
+
+	m_ConnectingAttempt = true;
+}
+
+void Network::Receive()
+{
+	for (m_Packet = m_Self->Receive(); m_Packet; m_Self->DeallocatePacket(m_Packet), m_Packet = m_Self->Receive())
+	{
+		m_PacketIdentifier = GetPacketIdentifier();
+		m_ParsePacketData->ParsePacket(m_PacketIdentifier, m_Packet);
+	}
+}
+
+unsigned char Network::GetPacketIdentifier()
+{
+	if (m_Packet == 0)
+		return 255;
+
+	if ((unsigned char)m_Packet->data[0] == ID_TIMESTAMP)
+	{
+		RakAssert(m_Packet->length > sizeof(SLNet::MessageID) + sizeof(SLNet::Time));
+		return (unsigned char)m_Packet->data[sizeof(SLNet::MessageID) + sizeof(SLNet::Time)];
+	}
+	else
+		return (unsigned char)m_Packet->data[0];
+}
+
+//Getters & Setters
+#ifdef CLIENT
+const unsigned int Network::GetClientPort() const
+{
+	return m_ClientListeningPort;
+}
+
+const unsigned int Network::GetCurrentClients() const
+{
+	return m_CurrentClients;
+}
+
+const unsigned int Network::GetClientID() const
+{
+	return m_ClientID;
+}
+
+void Network::SetClientPort(unsigned int port)
+{
+	m_ClientListeningPort = port;
+}
+
+void Network::SetCurrentClients(unsigned int currentClients)
+{
+	m_CurrentClients = currentClients;
+}
+
+void Network::SetClientID(unsigned int clientID)
+{
+	m_ClientID = clientID;
+}
+
+#elif SERVER
+const std::unordered_map<unsigned int, User>& Network::GetUserMap() const
+{
+	return m_UserMap;
+}
+
+unsigned int Network::AddUserMapEntry(User user)
+{
+	for (unsigned int i = 0; i < m_UserMap.size(); i++)
+	{
+		if (m_UserMap[i].Connected == false)
+		{
+			m_UserMap[i] = user;
+			return i;
+		}
+	}
+
+	printf("No user was disconnected\n");
+	return UNDEFINED;
+}
+
+void Network::DisableUserMapEntry(unsigned int id)
+{
+	if (m_UserMap.find(id) != m_UserMap.end())
+		m_UserMap[id].Connected = false;
+	else
+		printf("Unable to disable user\n");
+}
+
+unsigned int Network::GetClientIDBySystemAddress(SLNet::SystemAddress& systemAddress)
+{
+	unsigned int index = 0;
+	bool found = false;
+	std::unordered_map<unsigned int, User>::iterator it;
+	for (it = m_UserMap.begin(); it != m_UserMap.end(); it++)
+	{
+		if (systemAddress != it->second.SystemAddress)
+			index++;
+		else
+		{
+			found = true;
+			break;
+		}
+	}
+
+	if (found)
+		return index;
+	else
+		return 9999;
+}
+
+unsigned int Network::GetCurrentClients()
+{
+	unsigned int currentClients = 0;
+	for(unsigned int i = 0; i < m_UserMap.size(); i++)
+	{
+		if (m_UserMap[i].Connected == true)
+			currentClients++;
+	}
+
+	return currentClients;
+}
+
+unsigned int Network::GetClientID()
+{
+	for (unsigned int i = 0; i < m_UserMap.size(); i++)
+	{
+		if (m_UserMap[i].Connected == false)
+			return i;
+	}
+
+	return UNDEFINED;
+}
+
+User& Network::GetClientByID(unsigned int id)
+{
+	return m_UserMap[id];
+}
+#endif
+
+bool Network::GetConnectingAttempt() const
+{
+	return m_ConnectingAttempt;
+}
+
+bool Network::GetIsConnected() const
+{
+	return m_IsConnected;
+}
+
+void Network::SetIsConnected(bool isConnected)
+{
+	m_IsConnected = isConnected;
+}

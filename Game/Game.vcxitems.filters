@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{adffeb7b-82ba-4654-bdcf-8f7c66b3db58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{7c337952-81af-4fb8-a345-52f8dc14199f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Network">
+      <UniqueIdentifier>{2978a4f3-6279-4b35-b603-f2ffe59adea3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Objects">
+      <UniqueIdentifier>{ff115656-a649-465a-822a-389853f30850}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Objects">
+      <UniqueIdentifier>{cd640b22-ba70-4fc4-8ccf-83407a55694a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\Network\CustomPackets.hpp">
+      <Filter>Headers\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\Objects\TestObject.hpp">
+      <Filter>Headers\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\Objects\PlayerObject.hpp">
+      <Filter>Headers\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\Objects\BombObject.hpp">
+      <Filter>Headers\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\Objects\CrateObject.hpp">
+      <Filter>Headers\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\Objects\UpgradeObject.hpp">
+      <Filter>Headers\Objects</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Source\Objects\TestObject.cpp">
+      <Filter>Source\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Source\Objects\PlayerObject.cpp">
+      <Filter>Source\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Source\Objects\BombObject.cpp">
+      <Filter>Source\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Source\Objects\CrateObject.cpp">
+      <Filter>Source\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Source\Objects\UpgradeObject.cpp">
+      <Filter>Source\Objects</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

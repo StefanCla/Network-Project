@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{aaef1cee-019d-4524-beea-21c1d239bb65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{36136d71-edad-46f5-acab-559fbf78dd98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\ObjectManager">
+      <UniqueIdentifier>{5aa51858-0124-43a2-9391-cf5ba7c7e463}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\ObjectManager">
+      <UniqueIdentifier>{6fe34a44-302f-4c58-afd9-3ff2395f4166}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Renderer">
+      <UniqueIdentifier>{554b1ded-a2d9-4c17-a816-71ab7cc7a386}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Renderer">
+      <UniqueIdentifier>{ea7d7be7-b221-444e-87d8-0221e5c8eda8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Extern">
+      <UniqueIdentifier>{167929e8-714e-4151-8336-84ab05310693}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Extern\ImGui">
+      <UniqueIdentifier>{1fa3ff65-df53-41cc-bda2-c67172cad3ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Renderer\Mesh">
+      <UniqueIdentifier>{0b49a3dc-1bc7-4256-9ebe-7186df2fdd7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Renderer\Mesh">
+      <UniqueIdentifier>{f33bbbe5-c9bb-4985-aec2-f641ef036c2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Network">
+      <UniqueIdentifier>{4588dd04-1419-4b1e-8ada-4ff89d024531}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Network">
+      <UniqueIdentifier>{d709679f-fd9a-4e60-859e-411ac6e6db25}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\Engine.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\Precomp.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\ObjectManager\ObjectManager.hpp">
+      <Filter>Headers\ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\ObjectManager\Object.hpp">
+      <Filter>Headers\ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\ObjectManager\Transform.hpp">
+      <Filter>Headers\ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\Renderer\Renderer.hpp">
+      <Filter>Headers\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\Renderer\Mesh\BaseMesh.hpp">
+      <Filter>Headers\Renderer\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\Renderer\Mesh\CircleMesh.hpp">
+      <Filter>Headers\Renderer\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\Renderer\Mesh\RectMesh.hpp">
+      <Filter>Headers\Renderer\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\Network\Network.hpp">
+      <Filter>Headers\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Headers\Network\BasePacketParser.hpp">
+      <Filter>Headers\Network</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Source\Engine.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Source\Precomp.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Source\ObjectManager\ObjectManager.cpp">
+      <Filter>Source\ObjectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Source\ObjectManager\Object.cpp">
+      <Filter>Source\ObjectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Source\Renderer\Renderer.cpp">
+      <Filter>Source\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Extern\ImGui\imgui.cpp">
+      <Filter>Extern\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Extern\ImGui\imgui_draw.cpp">
+      <Filter>Extern\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Extern\ImGui\imgui_stdlib.cpp">
+      <Filter>Extern\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Extern\ImGui\imgui_tables.cpp">
+      <Filter>Extern\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Extern\ImGui\imgui_widgets.cpp">
+      <Filter>Extern\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Extern\ImGui\imgui-SFML.cpp">
+      <Filter>Extern\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Source\Renderer\Mesh\BaseMesh.cpp">
+      <Filter>Source\Renderer\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Source\Renderer\Mesh\CircleMesh.cpp">
+      <Filter>Source\Renderer\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Source\Renderer\Mesh\RectMesh.cpp">
+      <Filter>Source\Renderer\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Source\Network\Network.cpp">
+      <Filter>Source\Network</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
