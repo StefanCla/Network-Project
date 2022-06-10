@@ -17,3 +17,5 @@ As the game is unable to be played alone, the server must have at least 2 client
 
 # Known bugs
 #1 Sometimes a chat message will be send & parsed twice in a row.
+
+#2 Debug | Win32 does not compile
