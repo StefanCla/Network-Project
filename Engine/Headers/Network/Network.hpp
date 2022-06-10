@@ -38,12 +38,13 @@ public:
 
 	//Getters & Setters
 #ifdef CLIENT
-	const unsigned int GetClientPort() const;
+	const unsigned int GetServerPort() const;
 	const unsigned int GetCurrentClients() const;
 	const unsigned int GetClientID() const;
-	void SetClientPort(unsigned int port);
 	void SetCurrentClients(unsigned int currectClients);
 	void SetClientID(unsigned int clientID);
+	void SetServerPort(unsigned int port);
+	void SetServerIP(std::string serverIP);
 #elif SERVER
 	const std::unordered_map<unsigned int, User>& GetUserMap() const;
 	unsigned int AddUserMapEntry(User user);
@@ -60,7 +61,6 @@ public:
 	SLNet::RakPeerInterface* m_Self;
 private:
 #ifdef CLIENT
-	unsigned int m_ClientListeningPort; //Port at which the client will listen
 	unsigned int m_CurrentClients; //Number of currently connected clients
 	unsigned int m_ClientID; //Your client ID
 #elif SERVER
@@ -69,6 +69,8 @@ private:
 
 	bool m_ConnectingAttempt; //True if the client is trying to connect to the server
 	bool m_IsConnected;	//True if the client is connected with the server
+	std::string m_ServerIP;
+	unsigned int m_ServerPort;
 
 	//SLNet::RakPeerInterface* m_Self;
 	SLNet::Packet* m_Packet;

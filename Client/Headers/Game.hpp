@@ -39,6 +39,7 @@ private:
 private:
 	std::string m_Name;
 	std::string m_Port;
+	std::string m_ServerIP;
 	bool m_IsDetailSet;
 
 	std::vector<std::string> m_MessageVector;

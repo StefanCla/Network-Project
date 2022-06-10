@@ -101,7 +101,8 @@ void Game::UpdateLoop()
 				SetClientDetails();
 				if (m_Engine->IsKeyPressed(sf::Keyboard::Enter))
 				{
-					m_Network->SetClientPort(atoi(m_Port.c_str()));
+					m_Network->SetServerPort(atoi(m_Port.c_str()));
+					m_Network->SetServerIP(m_ServerIP);
 					m_IsDetailSet = true;
 				}
 
@@ -110,36 +111,41 @@ void Game::UpdateLoop()
 					if (ImGui::Button("Stefan"))
 					{
 						m_Name = "Stefan";
-						m_Port = "40001";
-						m_Network->SetClientPort(atoi(m_Port.c_str()));
+						m_Port = "40000";
+						m_Network->SetServerPort(atoi(m_Port.c_str()));
+						m_Network->SetServerIP("127.0.0.1");
 						m_IsDetailSet = true;
 					}
 					if (ImGui::Button("Wessel"))
 					{
 						m_Name = "Wessel";
-						m_Port = "40002";
-						m_Network->SetClientPort(atoi(m_Port.c_str()));
+						m_Port = "40000";
+						m_Network->SetServerPort(atoi(m_Port.c_str()));
+						m_Network->SetServerIP("127.0.0.1");
 						m_IsDetailSet = true;
 					}
-					if (ImGui::Button("Liza"))
+					if (ImGui::Button("Lex"))
 					{
-						m_Name = "Liza";
-						m_Port = "40003";
-						m_Network->SetClientPort(atoi(m_Port.c_str()));
+						m_Name = "Lex";
+						m_Port = "40000";
+						m_Network->SetServerPort(atoi(m_Port.c_str()));
+						m_Network->SetServerIP("127.0.0.1");
 						m_IsDetailSet = true;
 					}
-					if (ImGui::Button("Britt"))
+					if (ImGui::Button("Stan"))
 					{
-						m_Name = "Britt";
-						m_Port = "40004";
-						m_Network->SetClientPort(atoi(m_Port.c_str()));
+						m_Name = "Stan";
+						m_Port = "40000";
+						m_Network->SetServerPort(atoi(m_Port.c_str()));
+						m_Network->SetServerIP("127.0.0.1");
 						m_IsDetailSet = true;
 					}
 					if (ImGui::Button("?????"))
 					{
 						m_Name = "?????";
-						m_Port = "40005";
-						m_Network->SetClientPort(atoi(m_Port.c_str()));
+						m_Port = "40000";
+						m_Network->SetServerPort(atoi(m_Port.c_str()));
+						m_Network->SetServerIP("127.0.0.1");
 						m_IsDetailSet = true;
 					}
 				ImGui::End();
@@ -236,23 +242,27 @@ void Game::SetClientDetails()
 {
 	char tempName[512];
 	char tempPort[512];
+	char tempIP[512];
 
 #ifdef WINDOWS
 	strcpy_s(tempName, m_Name.c_str());
 	strcpy_s(tempPort, m_Port.c_str());
+	strcpy_s(tempIP, m_ServerIP.c_str());
 #else
 	strcpy(tempName, m_Name.c_str());
 	strcpy(tempPort, m_Port.c_str());
-
+	strcpy(tempIP, m_ServerIP.c_str());
 #endif
 
 	ImGui::Begin("Setup");
 	ImGui::InputText("Set Name:", tempName, sizeof(tempName));
-	ImGui::InputText("Set Port", tempPort, sizeof(tempPort));
+	ImGui::InputText("Set Port:", tempPort, sizeof(tempPort));
+	ImGui::InputText("Set IP:", tempIP, sizeof(tempIP));
 	ImGui::End();
 
 	m_Name = tempName;
 	m_Port = tempPort;
+	m_ServerIP = tempIP;
 }
 
 //Obtain message to send

@@ -35,18 +35,25 @@ void Network::SetConnection()
 {
 #ifdef SERVER
 
+	//Setup port
+	printf("Enter server port: \n");
+	std::string port = "0";
+	std::cin >> port;
+	m_ServerPort = atoi(port.c_str());
+
+	//Initialize the server
 	m_Self = SLNet::RakPeerInterface::GetInstance();
 	m_Self->SetIncomingPassword(PASS, (int)strlen(PASS));
 	m_Self->SetTimeoutTime(30000, SLNet::UNASSIGNED_SYSTEM_ADDRESS);
 	m_Self->SetMaximumIncomingConnections(MAXPLAYERS);
 
 	SLNet::SocketDescriptor socketDescriptors[2];
-	socketDescriptors[0].port = static_cast<unsigned short>(SERVERPORT);
+	socketDescriptors[0].port = static_cast<unsigned short>(m_ServerPort);
 	socketDescriptors[0].socketFamily = AF_INET;
-	socketDescriptors[1].port = static_cast<unsigned short>(SERVERPORT);
+	socketDescriptors[1].port = static_cast<unsigned short>(m_ServerPort);
 	socketDescriptors[1].socketFamily = AF_INET6;
 
-	bool validStart = m_Self->Startup(4, socketDescriptors, 1) == SLNet::RAKNET_STARTED;
+	bool validStart = m_Self->Startup(MAXPLAYERS, socketDescriptors, 1) == SLNet::RAKNET_STARTED;
 	if (!validStart)
 		printf("Server failed to start.\n");
 
@@ -57,6 +64,7 @@ void Network::SetConnection()
 
 #elif CLIENT
 
+	//Initialize the client
 	m_Self = SLNet::RakPeerInterface::GetInstance();
 	m_Self->AllowConnectionResponseIPMigration(false);
 
@@ -65,7 +73,7 @@ void Network::SetConnection()
 	m_Self->Startup(8, &socketDescriptor, 1);
 	m_Self->SetOccasionalPing(true);
 
-	m_Self->Connect(SERVERIP, static_cast<unsigned short>(SERVERPORT), PASS, (int)strlen(PASS));
+	m_Self->Connect(m_ServerIP.c_str(), static_cast<unsigned short>(m_ServerPort), PASS, (int)strlen(PASS));
 
 #endif
 
@@ -97,9 +105,9 @@ unsigned char Network::GetPacketIdentifier()
 
 //Getters & Setters
 #ifdef CLIENT
-const unsigned int Network::GetClientPort() const
+const unsigned int Network::GetServerPort() const
 {
-	return m_ClientListeningPort;
+	return m_ServerPort;
 }
 
 const unsigned int Network::GetCurrentClients() const
@@ -112,11 +120,6 @@ const unsigned int Network::GetClientID() const
 	return m_ClientID;
 }
 
-void Network::SetClientPort(unsigned int port)
-{
-	m_ClientListeningPort = port;
-}
-
 void Network::SetCurrentClients(unsigned int currentClients)
 {
 	m_CurrentClients = currentClients;
@@ -125,6 +128,16 @@ void Network::SetCurrentClients(unsigned int currentClients)
 void Network::SetClientID(unsigned int clientID)
 {
 	m_ClientID = clientID;
+}
+
+void Network::SetServerPort(unsigned int port)
+{
+	m_ServerPort = port;
+}
+
+void Network::SetServerIP(std::string serverIP)
+{
+	m_ServerIP = serverIP;
 }
 
 #elif SERVER
