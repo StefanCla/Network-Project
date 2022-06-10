@@ -22,9 +22,6 @@
     <Filter Include="Extern">
       <UniqueIdentifier>{167929e8-714e-4151-8336-84ab05310693}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Extern\ImGui">
-      <UniqueIdentifier>{1fa3ff65-df53-41cc-bda2-c67172cad3ef}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Headers\Renderer\Mesh">
       <UniqueIdentifier>{0b49a3dc-1bc7-4256-9ebe-7186df2fdd7f}</UniqueIdentifier>
     </Filter>
@@ -36,6 +33,30 @@
     </Filter>
     <Filter Include="Source\Network">
       <UniqueIdentifier>{d709679f-fd9a-4e60-859e-411ac6e6db25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Extern\glm">
+      <UniqueIdentifier>{372338b0-a99f-4572-9e68-ee7fbe086131}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Extern\glm\detail">
+      <UniqueIdentifier>{6239423b-4c20-4ead-99b8-5db950aae0cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Extern\glm\ext">
+      <UniqueIdentifier>{db1997ed-c570-4a0b-a67b-8b4e65091be3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Extern\glm\gtc">
+      <UniqueIdentifier>{d45432ed-976d-488d-8501-ee09714447e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Extern\glm\gtx">
+      <UniqueIdentifier>{fa0610db-1157-4dae-a873-02abe6296aff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Extern\glm\simd">
+      <UniqueIdentifier>{de645f23-c1ea-4a1c-8233-eea63bb8884f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Extern\slikenet">
+      <UniqueIdentifier>{35ae71a4-b54a-4cf5-97b8-945671775126}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Extern\slikenet\crypto">
+      <UniqueIdentifier>{a872341d-0c4c-4fac-9ebc-863a297a7d57}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -72,6 +93,1350 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Headers\Network\BasePacketParser.hpp">
       <Filter>Headers\Network</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\_features.hpp">
+      <Filter>Extern\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\_fixes.hpp">
+      <Filter>Extern\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\_noise.hpp">
+      <Filter>Extern\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\_swizzle.hpp">
+      <Filter>Extern\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\_swizzle_func.hpp">
+      <Filter>Extern\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\_vectorize.hpp">
+      <Filter>Extern\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\compute_common.hpp">
+      <Filter>Extern\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\compute_vector_relational.hpp">
+      <Filter>Extern\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\qualifier.hpp">
+      <Filter>Extern\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\setup.hpp">
+      <Filter>Extern\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_float.hpp">
+      <Filter>Extern\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_half.hpp">
+      <Filter>Extern\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_mat2x2.hpp">
+      <Filter>Extern\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_mat2x3.hpp">
+      <Filter>Extern\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_mat2x4.hpp">
+      <Filter>Extern\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_mat3x2.hpp">
+      <Filter>Extern\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_mat3x3.hpp">
+      <Filter>Extern\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_mat3x4.hpp">
+      <Filter>Extern\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_mat4x2.hpp">
+      <Filter>Extern\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_mat4x3.hpp">
+      <Filter>Extern\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_mat4x4.hpp">
+      <Filter>Extern\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_quat.hpp">
+      <Filter>Extern\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_vec1.hpp">
+      <Filter>Extern\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_vec2.hpp">
+      <Filter>Extern\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_vec3.hpp">
+      <Filter>Extern\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_vec4.hpp">
+      <Filter>Extern\glm\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_clip_space.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_common.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_double2x2.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_double2x2_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_double2x3.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_double2x3_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_double2x4.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_double2x4_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_double3x2.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_double3x2_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_double3x3.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_double3x3_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_double3x4.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_double3x4_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_double4x2.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_double4x2_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_double4x3.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_double4x3_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_double4x4.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_double4x4_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_float2x2.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_float2x2_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_float2x3.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_float2x3_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_float2x4.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_float2x4_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_float3x2.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_float3x2_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_float3x3.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_float3x3_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_float3x4.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_float3x4_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_float4x2.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_float4x2_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_float4x3.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_float4x3_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_float4x4.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_float4x4_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_int2x2.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_int2x2_sized.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_int2x3.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_int2x3_sized.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_int2x4.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_int2x4_sized.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_int3x2.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_int3x2_sized.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_int3x3.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_int3x3_sized.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_int3x4.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_int3x4_sized.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_int4x2.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_int4x2_sized.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_int4x3.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_int4x3_sized.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_int4x4.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_int4x4_sized.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_integer.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_projection.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_relational.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_transform.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_uint2x2.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_uint2x2_sized.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_uint2x3.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_uint2x3_sized.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_uint2x4.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_uint2x4_sized.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_uint3x2.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_uint3x2_sized.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_uint3x3.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_uint3x3_sized.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_uint3x4.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_uint3x4_sized.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_uint4x2.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_uint4x2_sized.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_uint4x3.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_uint4x3_sized.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_uint4x4.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_uint4x4_sized.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\quaternion_common.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\quaternion_double.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\quaternion_double_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\quaternion_exponential.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\quaternion_float.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\quaternion_float_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\quaternion_geometric.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\quaternion_relational.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\quaternion_transform.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\quaternion_trigonometric.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\scalar_common.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\scalar_constants.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\scalar_int_sized.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\scalar_integer.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\scalar_packing.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\scalar_reciprocal.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\scalar_relational.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\scalar_uint_sized.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\scalar_ulp.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_bool1.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_bool1_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_bool2.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_bool2_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_bool3.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_bool3_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_bool4.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_bool4_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_common.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_double1.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_double1_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_double2.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_double2_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_double3.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_double3_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_double4.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_double4_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_float1.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_float1_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_float2.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_float2_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_float3.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_float3_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_float4.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_float4_precision.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_int1.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_int1_sized.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_int2.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_int2_sized.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_int3.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_int3_sized.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_int4.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_int4_sized.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_integer.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_packing.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_reciprocal.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_relational.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_uint1.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_uint1_sized.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_uint2.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_uint2_sized.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_uint3.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_uint3_sized.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_uint4.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_uint4_sized.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_ulp.hpp">
+      <Filter>Extern\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\bitfield.hpp">
+      <Filter>Extern\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\color_space.hpp">
+      <Filter>Extern\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\constants.hpp">
+      <Filter>Extern\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\epsilon.hpp">
+      <Filter>Extern\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\integer.hpp">
+      <Filter>Extern\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\matrix_access.hpp">
+      <Filter>Extern\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\matrix_integer.hpp">
+      <Filter>Extern\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\matrix_inverse.hpp">
+      <Filter>Extern\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\matrix_transform.hpp">
+      <Filter>Extern\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\noise.hpp">
+      <Filter>Extern\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\packing.hpp">
+      <Filter>Extern\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\quaternion.hpp">
+      <Filter>Extern\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\random.hpp">
+      <Filter>Extern\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\reciprocal.hpp">
+      <Filter>Extern\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\round.hpp">
+      <Filter>Extern\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\type_aligned.hpp">
+      <Filter>Extern\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\type_precision.hpp">
+      <Filter>Extern\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\type_ptr.hpp">
+      <Filter>Extern\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\ulp.hpp">
+      <Filter>Extern\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\vec1.hpp">
+      <Filter>Extern\glm\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\associated_min_max.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\bit.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\closest_point.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\color_encoding.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\color_space.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\color_space_YCoCg.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\common.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\compatibility.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\component_wise.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\dual_quaternion.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\easing.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\euler_angles.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\extend.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\extended_min_max.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\exterior_product.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\fast_exponential.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\fast_square_root.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\fast_trigonometry.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\functions.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\gradient_paint.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\handed_coordinate_space.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\hash.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\integer.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\intersect.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\io.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\log_base.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\matrix_cross_product.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\matrix_decompose.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\matrix_factorisation.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\matrix_interpolation.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\matrix_major_storage.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\matrix_operation.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\matrix_query.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\matrix_transform_2d.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\mixed_product.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\norm.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\normal.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\normalize_dot.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\number_precision.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\optimum_pow.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\orthonormalize.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\pca.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\perpendicular.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\polar_coordinates.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\projection.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\quaternion.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\range.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\raw_data.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\rotate_normalized_axis.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\rotate_vector.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\scalar_multiplication.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\scalar_relational.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\spline.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\std_based_type.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\string_cast.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\texture.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\transform.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\transform2.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\type_aligned.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\type_trait.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\vec_swizzle.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\vector_angle.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\vector_query.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\wrap.hpp">
+      <Filter>Extern\glm\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\simd\common.h">
+      <Filter>Extern\glm\simd</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\simd\exponential.h">
+      <Filter>Extern\glm\simd</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\simd\geometric.h">
+      <Filter>Extern\glm\simd</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\simd\integer.h">
+      <Filter>Extern\glm\simd</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\simd\matrix.h">
+      <Filter>Extern\glm\simd</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\simd\neon.h">
+      <Filter>Extern\glm\simd</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\simd\packing.h">
+      <Filter>Extern\glm\simd</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\simd\platform.h">
+      <Filter>Extern\glm\simd</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\simd\trigonometric.h">
+      <Filter>Extern\glm\simd</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\simd\vector_relational.h">
+      <Filter>Extern\glm\simd</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\common.hpp">
+      <Filter>Extern\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\exponential.hpp">
+      <Filter>Extern\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext.hpp">
+      <Filter>Extern\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\fwd.hpp">
+      <Filter>Extern\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\geometric.hpp">
+      <Filter>Extern\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\glm.hpp">
+      <Filter>Extern\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\integer.hpp">
+      <Filter>Extern\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\mat2x2.hpp">
+      <Filter>Extern\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\mat2x3.hpp">
+      <Filter>Extern\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\mat2x4.hpp">
+      <Filter>Extern\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\mat3x2.hpp">
+      <Filter>Extern\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\mat3x3.hpp">
+      <Filter>Extern\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\mat3x4.hpp">
+      <Filter>Extern\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\mat4x2.hpp">
+      <Filter>Extern\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\mat4x3.hpp">
+      <Filter>Extern\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\mat4x4.hpp">
+      <Filter>Extern\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\matrix.hpp">
+      <Filter>Extern\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\packing.hpp">
+      <Filter>Extern\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\trigonometric.hpp">
+      <Filter>Extern\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\vec2.hpp">
+      <Filter>Extern\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\vec3.hpp">
+      <Filter>Extern\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\vec4.hpp">
+      <Filter>Extern\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\vector_relational.hpp">
+      <Filter>Extern\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\crypto\cryptomanager.h">
+      <Filter>Extern\slikenet\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\crypto\factory.h">
+      <Filter>Extern\slikenet\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\crypto\fileencrypter.h">
+      <Filter>Extern\slikenet\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\crypto\ifileencrypter.h">
+      <Filter>Extern\slikenet\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\crypto\securestring.h">
+      <Filter>Extern\slikenet\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\_FindFirst.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\alloca.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\assert.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\AutopatcherPatchContext.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\AutopatcherRepositoryInterface.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\Base64Encoder.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\BitStream.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\CCRakNetSlidingWindow.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\CCRakNetUDT.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\CheckSum.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\CloudClient.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\CloudCommon.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\CloudServer.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\commandparser.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\CommandParserInterface.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\ConnectionGraph2.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\ConsoleServer.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\DataCompressor.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\defineoverrides.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\defines.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\DirectoryDeltaTransfer.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\DR_SHA1.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\DS_BinarySearchTree.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\DS_BPlusTree.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\DS_BytePool.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\DS_ByteQueue.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\DS_Hash.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\DS_Heap.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\DS_HuffmanEncodingTree.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\DS_HuffmanEncodingTreeFactory.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\DS_HuffmanEncodingTreeNode.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\DS_LinkedList.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\DS_List.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\DS_Map.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\DS_MemoryPool.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\DS_Multilist.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\DS_OrderedChannelHeap.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\DS_OrderedList.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\DS_Queue.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\DS_QueueLinkedList.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\DS_RangeList.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\DS_Table.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\DS_ThreadsafeAllocatingQueue.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\DS_Tree.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\DS_WeightedGraph.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\DynDNS.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\EmailSender.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\EmptyHeader.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\EpochTimeToString.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\Export.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\FileList.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\FileListNodeContext.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\FileListTransfer.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\FileListTransferCBInterface.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\FileOperations.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\FormatString.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\FullyConnectedMesh2.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\Getche.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\Gets.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\GetTime.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\gettimeofday.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\GridSectorizer.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\HTTPConnection.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\HTTPConnection2.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\IncrementalReadInterface.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\InternalPacket.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\Itoa.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\Kbhit.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\linux_adapter.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\LinuxStrings.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\LocklessTypes.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\LogCommandParser.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\memoryoverride.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\MessageFilter.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\MessageIdentifiers.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\MTUSize.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\NativeFeatureIncludes.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\NativeFeatureIncludesOverrides.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\NativeTypes.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\NatPunchthroughClient.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\NatPunchthroughServer.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\NatTypeDetectionClient.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\NatTypeDetectionCommon.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\NatTypeDetectionServer.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\NetworkIDManager.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\NetworkIDObject.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\osx_adapter.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\PacketConsoleLogger.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\PacketFileLogger.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\PacketizedTCP.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\PacketLogger.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\PacketOutputWindowLogger.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\PacketPool.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\PacketPriority.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\peer.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\peerinterface.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\PluginInterface2.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\PS3Includes.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\PS4Includes.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\Rackspace.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\Rand.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\RandSync.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\ReadyEvent.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\RefCountedObj.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\RelayPlugin.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\ReliabilityLayer.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\ReplicaEnums.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\ReplicaManager3.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\Router2.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\RPC4Plugin.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\SecureHandshake.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\SendToThread.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\SignaledEvent.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\SimpleMutex.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\SimpleTCPServer.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\SingleProducerConsumer.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\sleep.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\slikenet.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\smartptr.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\socket.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\socket2.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\SocketDefines.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\SocketIncludes.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\SocketLayer.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\statistics.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\StatisticsHistory.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\string.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\StringCompressor.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\StringTable.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\SuperFastHash.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\TableSerializer.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\TCPInterface.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\TeamBalancer.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\TeamManager.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\TelnetTransport.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\thread.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\ThreadPool.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\ThreadsafePacketLogger.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\time.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\transport2.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\TransportInterface.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\TwoWayAuthentication.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\types.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\UDPForwarder.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\UDPProxyClient.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\UDPProxyCommon.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\UDPProxyCoordinator.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\UDPProxyServer.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\VariableDeltaSerializer.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\VariableListDeltaTracker.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\VariadicSQLParser.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\version.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\VitaIncludes.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\WindowsIncludes.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\WSAStartupSingleton.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\wstring.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\Includes\Shared\slikenet\XBox360Includes.h">
+      <Filter>Extern\slikenet</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Source\Engine.cpp">
@@ -89,24 +1454,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Source\Renderer\Renderer.cpp">
       <Filter>Source\Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Extern\ImGui\imgui.cpp">
-      <Filter>Extern\ImGui</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Extern\ImGui\imgui_draw.cpp">
-      <Filter>Extern\ImGui</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Extern\ImGui\imgui_stdlib.cpp">
-      <Filter>Extern\ImGui</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Extern\ImGui\imgui_tables.cpp">
-      <Filter>Extern\ImGui</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Extern\ImGui\imgui_widgets.cpp">
-      <Filter>Extern\ImGui</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Extern\ImGui\imgui-SFML.cpp">
-      <Filter>Extern\ImGui</Filter>
-    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Source\Renderer\Mesh\BaseMesh.cpp">
       <Filter>Source\Renderer\Mesh</Filter>
     </ClCompile>
@@ -119,5 +1466,427 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Source\Network\Network.cpp">
       <Filter>Source\Network</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\glm.cpp">
+      <Filter>Extern\glm\detail</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\func_common.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\func_common_simd.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\func_exponential.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\func_exponential_simd.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\func_geometric.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\func_geometric_simd.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\func_integer.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\func_integer_simd.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\func_matrix.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\func_matrix_simd.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\func_packing.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\func_packing_simd.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\func_trigonometric.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\func_trigonometric_simd.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\func_vector_relational.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\func_vector_relational_simd.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_half.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_mat2x2.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_mat2x3.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_mat2x4.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_mat3x2.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_mat3x3.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_mat3x4.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_mat4x2.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_mat4x3.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_mat4x4.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_mat4x4_simd.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_quat.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_quat_simd.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_vec1.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_vec2.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_vec3.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_vec4.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\detail\type_vec4_simd.inl">
+      <Filter>Extern\glm\detail</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_clip_space.inl">
+      <Filter>Extern\glm\ext</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_common.inl">
+      <Filter>Extern\glm\ext</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_integer.inl">
+      <Filter>Extern\glm\ext</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_projection.inl">
+      <Filter>Extern\glm\ext</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_relational.inl">
+      <Filter>Extern\glm\ext</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\matrix_transform.inl">
+      <Filter>Extern\glm\ext</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\quaternion_common.inl">
+      <Filter>Extern\glm\ext</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\quaternion_common_simd.inl">
+      <Filter>Extern\glm\ext</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\quaternion_exponential.inl">
+      <Filter>Extern\glm\ext</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\quaternion_geometric.inl">
+      <Filter>Extern\glm\ext</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\quaternion_relational.inl">
+      <Filter>Extern\glm\ext</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\quaternion_transform.inl">
+      <Filter>Extern\glm\ext</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\quaternion_trigonometric.inl">
+      <Filter>Extern\glm\ext</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\scalar_common.inl">
+      <Filter>Extern\glm\ext</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\scalar_constants.inl">
+      <Filter>Extern\glm\ext</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\scalar_integer.inl">
+      <Filter>Extern\glm\ext</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\scalar_packing.inl">
+      <Filter>Extern\glm\ext</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\scalar_reciprocal.inl">
+      <Filter>Extern\glm\ext</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\scalar_relational.inl">
+      <Filter>Extern\glm\ext</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\scalar_ulp.inl">
+      <Filter>Extern\glm\ext</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_common.inl">
+      <Filter>Extern\glm\ext</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_integer.inl">
+      <Filter>Extern\glm\ext</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_packing.inl">
+      <Filter>Extern\glm\ext</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_reciprocal.inl">
+      <Filter>Extern\glm\ext</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_relational.inl">
+      <Filter>Extern\glm\ext</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\ext\vector_ulp.inl">
+      <Filter>Extern\glm\ext</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\bitfield.inl">
+      <Filter>Extern\glm\gtc</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\color_space.inl">
+      <Filter>Extern\glm\gtc</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\constants.inl">
+      <Filter>Extern\glm\gtc</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\epsilon.inl">
+      <Filter>Extern\glm\gtc</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\integer.inl">
+      <Filter>Extern\glm\gtc</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\matrix_access.inl">
+      <Filter>Extern\glm\gtc</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\matrix_inverse.inl">
+      <Filter>Extern\glm\gtc</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\matrix_transform.inl">
+      <Filter>Extern\glm\gtc</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\noise.inl">
+      <Filter>Extern\glm\gtc</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\packing.inl">
+      <Filter>Extern\glm\gtc</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\quaternion.inl">
+      <Filter>Extern\glm\gtc</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\quaternion_simd.inl">
+      <Filter>Extern\glm\gtc</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\random.inl">
+      <Filter>Extern\glm\gtc</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\round.inl">
+      <Filter>Extern\glm\gtc</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\type_precision.inl">
+      <Filter>Extern\glm\gtc</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\type_ptr.inl">
+      <Filter>Extern\glm\gtc</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtc\ulp.inl">
+      <Filter>Extern\glm\gtc</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\associated_min_max.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\bit.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\closest_point.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\color_encoding.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\color_space.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\color_space_YCoCg.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\common.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\compatibility.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\component_wise.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\dual_quaternion.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\easing.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\euler_angles.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\extend.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\extended_min_max.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\exterior_product.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\fast_exponential.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\fast_square_root.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\fast_trigonometry.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\float_notmalize.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\functions.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\gradient_paint.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\handed_coordinate_space.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\hash.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\integer.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\intersect.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\io.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\log_base.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\matrix_cross_product.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\matrix_decompose.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\matrix_factorisation.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\matrix_interpolation.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\matrix_major_storage.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\matrix_operation.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\matrix_query.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\matrix_transform_2d.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\mixed_product.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\norm.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\normal.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\normalize_dot.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\number_precision.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\optimum_pow.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\orthonormalize.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\pca.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\perpendicular.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\polar_coordinates.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\projection.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\quaternion.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\raw_data.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\rotate_normalized_axis.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\rotate_vector.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\scalar_relational.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\spline.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\std_based_type.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\string_cast.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\texture.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\transform.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\transform2.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\type_aligned.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\type_trait.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\vector_angle.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\vector_query.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)..\Includes\Shared\glm\gtx\wrap.inl">
+      <Filter>Extern\glm\gtx</Filter>
+    </None>
   </ItemGroup>
 </Project>

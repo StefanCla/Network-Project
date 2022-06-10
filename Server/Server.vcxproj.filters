@@ -55,44 +55,8 @@
     <Library Include="..\Libs\ARM\libslikenet.a">
       <Filter>Extern\Libs\ARM</Filter>
     </Library>
-    <Library Include="..\Libs\ARM\Debug\libsfml-graphics-s-d.a">
-      <Filter>Extern\Libs\ARM\Debug</Filter>
-    </Library>
-    <Library Include="..\Libs\ARM\Debug\libsfml-system-s-d.a">
-      <Filter>Extern\Libs\ARM\Debug</Filter>
-    </Library>
-    <Library Include="..\Libs\ARM\Debug\libsfml-window-s-d.a">
-      <Filter>Extern\Libs\ARM\Debug</Filter>
-    </Library>
-    <Library Include="..\Libs\ARM\Release\libsfml-graphics-s.a">
-      <Filter>Extern\Libs\ARM\Release</Filter>
-    </Library>
-    <Library Include="..\Libs\ARM\Release\libsfml-system-s.a">
-      <Filter>Extern\Libs\ARM\Release</Filter>
-    </Library>
-    <Library Include="..\Libs\ARM\Release\libsfml-window-s.a">
-      <Filter>Extern\Libs\ARM\Release</Filter>
-    </Library>
     <Library Include="..\Libs\ARM64\libslikenet.a">
       <Filter>Extern\Libs\ARM64</Filter>
-    </Library>
-    <Library Include="..\Libs\ARM64\Debug\libsfml-graphics-s-d.a">
-      <Filter>Extern\Libs\ARM64\Debug</Filter>
-    </Library>
-    <Library Include="..\Libs\ARM64\Debug\libsfml-system-s-d.a">
-      <Filter>Extern\Libs\ARM64\Debug</Filter>
-    </Library>
-    <Library Include="..\Libs\ARM64\Debug\libsfml-window-s-d.a">
-      <Filter>Extern\Libs\ARM64\Debug</Filter>
-    </Library>
-    <Library Include="..\Libs\ARM64\Release\libsfml-graphics-s.a">
-      <Filter>Extern\Libs\ARM64\Release</Filter>
-    </Library>
-    <Library Include="..\Libs\ARM64\Release\libsfml-system-s.a">
-      <Filter>Extern\Libs\ARM64\Release</Filter>
-    </Library>
-    <Library Include="..\Libs\ARM64\Release\libsfml-window-s.a">
-      <Filter>Extern\Libs\ARM64\Release</Filter>
     </Library>
   </ItemGroup>
   <ItemGroup>
