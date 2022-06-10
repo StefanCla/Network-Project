@@ -11,7 +11,7 @@ To setup the project on Windows, simply download or clone the project and run bo
 As the game is unable to be played alone, the server must have at least 2 clients connected to the server.
 
 ### Linux
-To setup the project on Linux, make sure to first install SFML via the following command `sudo apt-get install libsfml-dev`.
+To setup the project on Linux, make sure to first install SFML via the following command `sudo apt-get install libsfml-dev` if you wish to use the client.
 Afterwards, either download or clone the project and run both the client & server.
 As the game is unable to be played alone, the server must have at least 2 clients connected to the server.
 
