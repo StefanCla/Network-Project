@@ -59,9 +59,16 @@ void PacketParser::ParseConnectionAccepted()
 {
 	m_Network->SetIsConnected(true);
 
-	//Return name packet
+	
 	NamePacket namePacket;
-	namePacket.Name = m_Game->GetName();
+	//Strings can't be send over between ARM and x64
+	//Rather, it must be a char array
+#ifdef WINDOWS
+	memcpy_s(namePacket.Name, sizeof(namePacket.Name), m_Game->GetName().c_str(), sizeof(m_Game->GetName().c_str()));
+#else
+	memcpy(namePacket.Name, m_Game->GetName().c_str(), sizeof(namePacket.Name));
+#endif
+
 	m_Network->Send(&namePacket, HIGH_PRIORITY, RELIABLE_ORDERED, true);
 }
 

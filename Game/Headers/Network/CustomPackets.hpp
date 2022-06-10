@@ -56,7 +56,7 @@ struct StartGamePacket
 struct NamePacket
 {
 	unsigned char PacketID = ID_NAME;
-	std::string Name{ "NULL" };
+	char Name[MAXCHATLENGTH];
 };
 
 struct ChatPacket

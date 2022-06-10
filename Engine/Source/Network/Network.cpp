@@ -38,6 +38,7 @@ void Network::SetConnection()
 	m_Self = SLNet::RakPeerInterface::GetInstance();
 	m_Self->SetIncomingPassword(PASS, (int)strlen(PASS));
 	m_Self->SetTimeoutTime(30000, SLNet::UNASSIGNED_SYSTEM_ADDRESS);
+	m_Self->SetMaximumIncomingConnections(MAXPLAYERS);
 
 	SLNet::SocketDescriptor socketDescriptors[2];
 	socketDescriptors[0].port = static_cast<unsigned short>(SERVERPORT);
@@ -45,19 +46,10 @@ void Network::SetConnection()
 	socketDescriptors[1].port = static_cast<unsigned short>(SERVERPORT);
 	socketDescriptors[1].socketFamily = AF_INET6;
 
-	//Try to listen with IPv6
-	bool testIP = m_Self->Startup(4, socketDescriptors, 2) == SLNet::RAKNET_STARTED;
-	m_Self->SetMaximumIncomingConnections(MAXPLAYERS);
+	bool validStart = m_Self->Startup(4, socketDescriptors, 1) == SLNet::RAKNET_STARTED;
+	if (!validStart)
+		printf("Server failed to start.\n");
 
-	if (!testIP)
-	{
-		printf("Failed to start dual ports\n");
-		testIP = m_Self->Startup(4, socketDescriptors, 1) == SLNet::RAKNET_STARTED;
-		if (!testIP)
-		{
-			puts("Server failed to start.\n");
-		}
-	}
 	m_Self->SetOccasionalPing(true);
 	m_Self->SetUnreliableTimeout(1000);
 
@@ -68,7 +60,7 @@ void Network::SetConnection()
 	m_Self = SLNet::RakPeerInterface::GetInstance();
 	m_Self->AllowConnectionResponseIPMigration(false);
 
-	SLNet::SocketDescriptor socketDescriptor(static_cast<unsigned short>(m_ClientListeningPort), 0);
+	SLNet::SocketDescriptor socketDescriptor(0, "");
 	socketDescriptor.socketFamily = AF_INET;
 	m_Self->Startup(8, &socketDescriptor, 1);
 	m_Self->SetOccasionalPing(true);
@@ -168,10 +160,10 @@ unsigned int Network::GetClientIDBySystemAddress(SLNet::SystemAddress& systemAdd
 {
 	unsigned int index = 0;
 	bool found = false;
-	std::unordered_map<unsigned int, User>::iterator it;
-	for (it = m_UserMap.begin(); it != m_UserMap.end(); it++)
+
+	for (unsigned int i = 0; i < m_UserMap.size(); i++)
 	{
-		if (systemAddress != it->second.SystemAddress)
+		if (m_UserMap[i].SystemAddress != systemAddress)
 			index++;
 		else
 		{

@@ -10,7 +10,7 @@
 #define FRAMERATE 240
 
 #define SERVERPORT 40000
-#define SERVERIP "127.0.0.1"
+#define SERVERIP "192.168.0.135" //127.0.0.1
 #define PASS "RandomPass"
 
 #define MAXCHATLENGTH 2048
