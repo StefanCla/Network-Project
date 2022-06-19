@@ -69,6 +69,7 @@ struct MovementPacket
 {
 	unsigned char PacketID = ID_MOVEMENT;
 	unsigned int ClientID{ 9999 };
+	int CellID{ 9999 };
 	glm::vec2 Position{ glm::vec2(0.0f, 0.0f) };
 };
 

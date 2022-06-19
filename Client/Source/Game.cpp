@@ -99,11 +99,14 @@ void Game::UpdateLoop()
 			{
 				//Set name & port
 				SetClientDetails();
-				if (m_Engine->IsKeyPressed(sf::Keyboard::Enter))
+				if (m_Engine->HasFocus())
 				{
-					m_Network->SetServerPort(atoi(m_Port.c_str()));
-					m_Network->SetServerIP(m_ServerIP);
-					m_IsDetailSet = true;
+					if (m_Engine->IsKeyPressed(sf::Keyboard::Enter))
+					{
+						m_Network->SetServerPort(atoi(m_Port.c_str()));
+						m_Network->SetServerIP(m_ServerIP);
+						m_IsDetailSet = true;
+					}
 				}
 
 				//Quick start for debugging
@@ -174,7 +177,6 @@ void Game::UpdateLoop()
 						{
 							if (m_Network->GetCurrentClients() >= 2 && m_Network->GetCurrentClients() <= MAXPLAYERS)
 							{
-
 								StartGamePacket startGamePacket;
 								startGamePacket.StartGame = true;
 								m_Network->Send(&startGamePacket);
@@ -196,33 +198,28 @@ void Game::UpdateLoop()
 						}
 						ImGui::End();
 					}
-					
 
 					if (m_Engine->HasFocus())
 					{
 						//Input
 						if (m_Engine->IsKeyPressed(sf::Keyboard::W))
-						{
-							m_Engine->GetObjectByIndex(m_Network->GetClientID())->GetTransform().position.y = m_Engine->GetObjectByIndex(m_Network->GetClientID())->GetTransform().position.y + (-260.f * m_Engine->GetDeltaTime());
-						}
+							MovePlayer(Direction::Up);
+
 						if (m_Engine->IsKeyPressed(sf::Keyboard::S))
-						{
-							m_Engine->GetObjectByIndex(m_Network->GetClientID())->GetTransform().position.y = m_Engine->GetObjectByIndex(m_Network->GetClientID())->GetTransform().position.y + (260.f * m_Engine->GetDeltaTime());
-						}
+							MovePlayer(Direction::Down);
+
 						if (m_Engine->IsKeyPressed(sf::Keyboard::A))
-						{
-							m_Engine->GetObjectByIndex(m_Network->GetClientID())->GetTransform().position.x = m_Engine->GetObjectByIndex(m_Network->GetClientID())->GetTransform().position.x + (-260.f * m_Engine->GetDeltaTime());
-						}
+							MovePlayer(Direction::Left);
+
 						if (m_Engine->IsKeyPressed(sf::Keyboard::D))
-						{
-							m_Engine->GetObjectByIndex(m_Network->GetClientID())->GetTransform().position.x = m_Engine->GetObjectByIndex(m_Network->GetClientID())->GetTransform().position.x + (260.f * m_Engine->GetDeltaTime());
-						}
+							MovePlayer(Direction::Right);
 					}
 
 					//Send current position to the server
 					MovementPacket movementPacket;
 					movementPacket.ClientID = m_Network->GetClientID();
 					movementPacket.Position = m_Engine->GetObjectByIndex(m_Network->GetClientID())->GetTransform().position;
+					movementPacket.CellID = m_Engine->GetObjectByIndex(m_Network->GetClientID())->GetCell();
 					m_Network->Send(&movementPacket, LOW_PRIORITY, UNRELIABLE_SEQUENCED);
 				}
 			}
@@ -263,6 +260,90 @@ void Game::SetClientDetails()
 	m_Name = tempName;
 	m_Port = tempPort;
 	m_ServerIP = tempIP;
+}
+
+//Move the player & check for collision
+void Game::MovePlayer(Direction direction)
+{
+	std::shared_ptr<Object> player = m_Engine->GetObjectByIndex(m_Network->GetClientID());
+
+	switch (direction)
+	{
+	case Direction::Up:
+	{
+		int cell = player->GetCell() / MAPSIZEX;
+
+		if ((player->GetTransform().position.y + (TILESIZE * 0.5f)) <= (static_cast<float>(cell) * TILESIZE + (TILESIZE * 0.5f)))
+		{
+			int nextCell = player->GetCell() - MAPSIZEX;
+			if (m_Engine->m_Map[nextCell] == EMPTYCELL)
+				SetPosAndCell(player, (MOVEMENTSPEED * -1.0f), player->GetTransform().position.y);
+		}
+		else
+			SetPosAndCell(player, (MOVEMENTSPEED * -1.0f), player->GetTransform().position.y);
+	}
+		break;
+	case Direction::Down:
+	{
+		int cell = player->GetCell() / MAPSIZEX;
+
+		if ((player->GetTransform().position.y + (TILESIZE * 0.5f)) >= (static_cast<float>(cell) * TILESIZE + (TILESIZE * 0.5f)))
+		{
+			int nextCell = player->GetCell() + MAPSIZEX;
+			if (m_Engine->m_Map[nextCell] == EMPTYCELL)
+				SetPosAndCell(player, MOVEMENTSPEED, player->GetTransform().position.y);
+		}
+		else
+			SetPosAndCell(player, MOVEMENTSPEED, player->GetTransform().position.y);
+	}
+		break;
+	case Direction::Left:
+	{
+		int cell = player->GetCell() % MAPSIZEX;
+
+		if ((player->GetTransform().position.x + (TILESIZE * 0.5f)) <= (static_cast<float>(cell) * TILESIZE + (TILESIZE * 0.5f)))
+		{
+			int nextCell = player->GetCell() - 1;
+			if (m_Engine->m_Map[nextCell] == EMPTYCELL)
+				SetPosAndCell(player, (MOVEMENTSPEED * -1.0f), player->GetTransform().position.x);
+		}
+		else
+			SetPosAndCell(player, (MOVEMENTSPEED * -1.0f), player->GetTransform().position.x);
+	}
+		break;
+	case Direction::Right:
+	{
+		int cell = player->GetCell() % MAPSIZEX;
+
+		if ((player->GetTransform().position.x + (TILESIZE * 0.5f)) >= (static_cast<float>(cell) * TILESIZE + (TILESIZE * 0.5f)))
+		{
+			int nextCell = player->GetCell() + 1;
+			if (m_Engine->m_Map[nextCell] == EMPTYCELL)
+				SetPosAndCell(player, MOVEMENTSPEED, player->GetTransform().position.x);
+		}
+		else
+			SetPosAndCell(player, MOVEMENTSPEED, player->GetTransform().position.x);
+	}
+		break;
+	}
+}
+
+//Set the pos & cell of the player
+void Game::SetPosAndCell(std::shared_ptr<Object> player, float speed, float& pos)
+{
+	//Check if the player is out of bounds, if so, don't update their position anymore
+	float offset = 5.0f; //Avoid getting stuck in walls
+	glm::vec2 oldPos = player->GetTransform().position;
+
+	if (oldPos.x >= (((MAPSIZEX - 2) * TILESIZE) + offset) || oldPos.x <= (TILESIZE - offset)
+		|| oldPos.y >= (((MAPSIZEY - 2) * TILESIZE) + offset) || oldPos.y <= (TILESIZE - offset))
+		return;
+
+	//Set pos & cell
+	pos = pos + (speed * m_Engine->GetDeltaTime());
+
+	player->SetCell((static_cast<int>(player->GetTransform().position.x + (TILESIZE * 0.5f)) / static_cast<int>(TILESIZE) +
+		(static_cast<int>(player->GetTransform().position.y + (TILESIZE * 0.5f)) / static_cast<int>(TILESIZE)) * MAPSIZEX));
 }
 
 //Obtain message to send

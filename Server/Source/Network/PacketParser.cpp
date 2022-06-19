@@ -130,6 +130,7 @@ void PacketParser::ParseStartGame()
 					MovementPacket movementPacket;
 					movementPacket.ClientID = i;
 					movementPacket.Position = m_Engine->GetObjectByIndex(i)->GetTransform().position;
+					movementPacket.CellID = m_Engine->GetObjectByIndex(i)->GetCell();
 					m_Network->Send(&movementPacket);
 
 					m_Engine->GetObjectByIndex(i)->SetActive(true);
@@ -164,9 +165,32 @@ void PacketParser::ParseChat()
 void PacketParser::ParseMovement()
 {
 	MovementPacket* packet = (MovementPacket*)m_Packet->data;
-	m_Engine->GetObjectByIndex(packet->ClientID)->GetTransform().position = packet->Position;
 
-	m_Network->Send(packet, LOW_PRIORITY, UNRELIABLE_SEQUENCED, true, m_Packet->systemAddress);
+	//Validate if the position is possible
+	//Note: Currently we check if the cell it points to is valid and not out of bounds.
+	//However, ideally we would check if the cell is valid, not out of bounds & if its next to the original cell
+	//This solution however might be too expensive on a large scale, therefor we currently don't do this.
+
+	//Out of bounds check
+	float offset = 5.0f; //Avoid getting stuck in walls
+	if (packet->Position.x >= (((MAPSIZEX - 2) * TILESIZE) + offset) || packet->Position.x <= (TILESIZE - offset)
+		|| packet->Position.y >= (((MAPSIZEY - 2) * TILESIZE) + offset) || packet->Position.y <= (TILESIZE - offset))
+		return;
+
+	//Note: if the offset is too small, look into repositioning players so they stick to the center of a cell.
+	//When this is in place, we can increase the offset and just correct the player if needed.
+
+	int cell = (static_cast<int>(packet->Position.x + (TILESIZE * 0.5f)) / static_cast<int>(TILESIZE) +
+		(static_cast<int>(packet->Position.y + (TILESIZE * 0.5f)) / static_cast<int>(TILESIZE)) * MAPSIZEX);
+
+	if (m_Engine->m_Map[cell] == EMPTYCELL)
+		if (cell == packet->CellID)
+		{
+			m_Engine->GetObjectByIndex(packet->ClientID)->GetTransform().position = packet->Position;
+			m_Engine->GetObjectByIndex(packet->ClientID)->SetCell(packet->CellID);
+
+			m_Network->Send(packet, LOW_PRIORITY, UNRELIABLE_SEQUENCED, true, m_Packet->systemAddress);
+		}
 }
 
 void PacketParser::ParseTest()

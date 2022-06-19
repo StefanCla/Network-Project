@@ -22,10 +22,15 @@ Game::Game()
 	, m_StartGame(false)
 	, m_LobbyLead(SLNet::UNASSIGNED_SYSTEM_ADDRESS)
 {
-	m_PlayerStartLocation[0] = glm::vec2(0.0f, 0.0f);
-	m_PlayerStartLocation[1] = glm::vec2(100.0f, 100.0f);
-	m_PlayerStartLocation[2] = glm::vec2(0.0f, 100.0f);
-	m_PlayerStartLocation[3] = glm::vec2(100.0f, 0.0f);
+	m_PlayerStartLocation[0] = glm::vec2(32.0f, 32.0f);
+	m_PlayerStartLocation[1] = glm::vec2(224.0f, 224.0f);
+	m_PlayerStartLocation[2] = glm::vec2(32.0f, 224.0f);
+	m_PlayerStartLocation[3] = glm::vec2(224.0f, 32.0f);
+
+	m_StartCell[0] = 10;
+	m_StartCell[1] = 70;
+	m_StartCell[2] = 16;
+	m_StartCell[3] = 63;
 }
 
 Game::~Game()
@@ -121,6 +126,7 @@ void Game::SetStartGame(bool startGame)
 	for (unsigned int i = 0; i < MAXPLAYERS; i++)
 	{
 		m_Engine->GetObjectByIndex(i)->GetTransform().position = m_PlayerStartLocation[i];
+		m_Engine->GetObjectByIndex(i)->SetCell(m_StartCell[i]);
 	}
 }
 

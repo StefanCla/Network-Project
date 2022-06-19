@@ -10,6 +10,14 @@ class Network;
 class Engine;
 class Object;
 
+enum class Direction
+{
+	Up,
+	Down,
+	Left,
+	Right
+};
+
 class Game
 {
 public:
@@ -59,6 +67,8 @@ private:
 	//Functions
 private:
 	void SetClientDetails();
+	void MovePlayer(Direction direction);
+	void SetPosAndCell(std::shared_ptr<Object> player, float speed, float& pos);
 
 	//Chat
 	void ChatInput();

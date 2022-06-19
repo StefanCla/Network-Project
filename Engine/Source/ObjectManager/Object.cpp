@@ -3,8 +3,9 @@
 
 Object::Object()
 	: m_Active(false)
-	, m_RectSize(50.0f,50.0f)
+	, m_RectSize(32.0f, 32.0f)
 	, m_MeshType(MeshType::Rect)
+	, m_Cell(10)
 {
 	m_Mesh = std::make_unique<RectMesh>();
 }
@@ -53,8 +54,18 @@ BaseMesh* Object::GetMesh()
 	return m_Mesh.get();
 }
 
+int Object::GetCell()
+{
+	return m_Cell;
+}
+
 //Setters
 void Object::SetActive(bool active)
 {
 	m_Active = active;
+}
+
+void Object::SetCell(int cell)
+{
+	m_Cell = cell;
 }

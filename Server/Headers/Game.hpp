@@ -48,6 +48,7 @@ private:
 	bool m_StartGame;
 
 	glm::vec2 m_PlayerStartLocation[MAXPLAYERS];
+	int m_StartCell[MAXPLAYERS];
 
 	//Functions
 private:

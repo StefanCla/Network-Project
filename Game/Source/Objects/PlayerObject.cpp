@@ -10,5 +10,5 @@ PlayerObject::~PlayerObject()
 
 void PlayerObject::Update(float)
 {
-	printf("Player: %i\n", number);
+	printf("Cell: % i\n", m_Cell);
 }

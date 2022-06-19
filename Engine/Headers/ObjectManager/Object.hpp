@@ -28,9 +28,11 @@ public:
 	const glm::vec2& GetRectSize();
 	const MeshType GetMeshType();
 	BaseMesh* GetMesh();
+	int GetCell();
 
 	//Setters
 	void SetActive(bool active);
+	void SetCell(int cell);
 
 protected:
 	bool m_Active;
@@ -38,5 +40,6 @@ protected:
 	glm::vec2 m_RectSize;
 	std::unique_ptr<BaseMesh> m_Mesh;
 	MeshType m_MeshType;
+	int m_Cell;
 
 };

@@ -20,6 +20,28 @@ Renderer::~Renderer()
 
 void Renderer::Render(const std::vector<std::shared_ptr<Object>>& objects)
 {
+	//Map
+	const int map[81] = {
+		1,1,1,1,1,1,1,1,1,
+		1,0,0,0,0,0,0,0,1,
+		1,0,1,0,1,0,1,0,1,
+		1,0,0,0,0,0,0,0,1,
+		1,0,1,0,1,0,1,0,1,
+		1,0,0,0,0,0,0,0,1,
+		1,0,1,0,1,0,1,0,1,
+		1,0,0,0,0,0,0,0,1,
+		1,1,1,1,1,1,1,1,1
+	};
+
+	for (int y = 0; y < 9; y++)
+	{
+		for (int x = 0; x < 9; x++)
+		{
+			if(map[x + (y * 9)] == 1)
+				DrawRectangle(sf::Vector2f(32.0f, 32.0f), sf::Vector2f((x * 32.0f), (y  * 32.0f)), sf::Color::Green);
+		}
+	}
+
 	for (auto& object : objects)
 	{
 		if (object->GetActive())

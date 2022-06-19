@@ -19,3 +19,10 @@
 #define MAXCRATES 50
 #define MAXBOMBS 70
 #define MAXUPGRADES 50
+
+#define TILESIZE 32.0f
+#define MOVEMENTSPEED 260.0f
+#define MAPSIZEX 9
+#define MAPSIZEY 9
+#define MAPSIZE 81
+#define EMPTYCELL 0
