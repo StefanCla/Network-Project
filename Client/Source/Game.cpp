@@ -331,17 +331,23 @@ void Game::MovePlayer(Direction direction)
 //Set the pos & cell of the player
 void Game::SetPosAndCell(std::shared_ptr<Object> player, float speed, float& pos)
 {
-	//Check if the player is out of bounds, if so, don't update their position anymore
 	float offset = 5.0f; //Avoid getting stuck in walls
 	glm::vec2 oldPos = player->GetTransform().position;
 
-	if (oldPos.x >= (((MAPSIZEX - 2) * TILESIZE) + offset) || oldPos.x <= (TILESIZE - offset)
-		|| oldPos.y >= (((MAPSIZEY - 2) * TILESIZE) + offset) || oldPos.y <= (TILESIZE - offset))
-		return;
-
-	//Set pos & cell
+	//Set pos
 	pos = pos + (speed * m_Engine->GetDeltaTime());
 
+	glm::vec2 newPos = player->GetTransform().position;
+
+	//Check if the player is out of bounds, if so, don't update their position anymore
+	if (newPos.x >= (((MAPSIZEX - 2) * TILESIZE) + offset) || newPos.x <= (TILESIZE - offset)
+		|| newPos.y >= (((MAPSIZEY - 2) * TILESIZE) + offset) || newPos.y <= (TILESIZE - offset))
+	{
+		player->GetTransform().position = oldPos;
+		return;
+	}
+
+	//Set cell
 	player->SetCell((static_cast<int>(player->GetTransform().position.x + (TILESIZE * 0.5f)) / static_cast<int>(TILESIZE) +
 		(static_cast<int>(player->GetTransform().position.y + (TILESIZE * 0.5f)) / static_cast<int>(TILESIZE)) * MAPSIZEX));
 }

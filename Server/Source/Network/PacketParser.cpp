@@ -171,11 +171,11 @@ void PacketParser::ParseMovement()
 	//However, ideally we would check if the cell is valid, not out of bounds & if its next to the original cell
 	//This solution however might be too expensive on a large scale, therefor we currently don't do this.
 
-	//Out of bounds check
-	float offset = 5.0f; //Avoid getting stuck in walls
-	if (packet->Position.x >= (((MAPSIZEX - 2) * TILESIZE) + offset) || packet->Position.x <= (TILESIZE - offset)
-		|| packet->Position.y >= (((MAPSIZEY - 2) * TILESIZE) + offset) || packet->Position.y <= (TILESIZE - offset))
-		return;
+	//Out of bounds check | Maybe not needed anymore
+	//float offset = 5.0f; //Avoid getting stuck in walls
+	//if (packet->Position.x >= (((MAPSIZEX - 2) * TILESIZE) + offset) || packet->Position.x <= (TILESIZE - offset)
+	//	|| packet->Position.y >= (((MAPSIZEY - 2) * TILESIZE) + offset) || packet->Position.y <= (TILESIZE - offset))
+	//	return;
 
 	//Note: if the offset is too small, look into repositioning players so they stick to the center of a cell.
 	//When this is in place, we can increase the offset and just correct the player if needed.
